@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CalmnClassy Dev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
+            <div class="header-text">
+                <h1>About Us</h1>
+                <p>Learn more about CalmnClassy Dev and how we can help your business thrive in the digital age.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="heading-icon"><i class="fas fa-info-circle"></i></div>
+        <h2>About CalmnClassy Dev</h2>
+        <p>CalmnClassy Dev is a premier IT support company dedicated to delivering top-notch tech services with a touch of sophistication. Based in [Your Location], we specialize in creating stunning websites, providing robust IT support, and offering strategic consulting to businesses of all sizes.</p>
+        <p>Our team of experienced professionals is committed to delivering high-quality solutions tailored to meet the unique needs of our clients. We work with a diverse range of companies and industries, helping them navigate the complexities of technology with confidence and style.</p>
+
+        <div class="heading-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Our Mission</h3>
+        <p>Our mission is to provide reliable, efficient, and elegant IT solutions that empower your organization to thrive in the digital age. We believe in building long-term relationships with our clients, based on trust, transparency, and mutual success.</p>
+
+        <div class="heading-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Our Services</h3>
+        <p>From web development to IT consulting, cybersecurity to cloud computing, we offer a comprehensive range of services designed to meet the evolving needs of modern businesses.</p>
+
+        <div class="heading-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Partnering with Businesses</h3>
+        <p>We pride ourselves on our ability to collaborate with businesses of all sizes, providing personalized solutions that drive growth and innovation. Our client portfolio includes startups, small businesses, and large enterprises, each benefiting from our expertise and commitment to excellence.</p>
+
+        <div class="heading-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Contact Us</h3>
+        <p>Located in East Africa,Nairobi , we are always here to support your business needs. Reach out to us at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 745 087 451.</p>
+    </section>
+    <section id="blog">
+        <a href="{{ url_for('rss') }}"><img src="static/images.png"> Latest Articles</a></li>
+    </section>
+    <section id="cta">
+        <div class="heading-icon"><i class="fas fa-bullhorn"></i></div>
+        <h2>Get Started with CalmnClassy Dev</h2>
+        <p>Ready to take your business to the next level? Contact us today for a free consultation!</p>
+        <button onclick="window.location.href='{{ url_for('contact') }}'">Contact Us</button>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    </footer>
+</body>
+</html>
