@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - CalmnClassy Dev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
+            <div class="header-text">
+                <h1>Our Services</h1>
+                <p>Discover the range of services we offer to help your business thrive in the digital age.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="service">
+            <i class="fas fa-laptop-code"></i>
+            <p><strong>Custom Software Development & Design:</strong> We design and develop mobile, web, and desktop applications tailored to your specific business needs.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-network-wired"></i>
+            <p><strong>ICT Services:</strong> Our team provides expertise in information systems to help you implement the right technology for your business.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-search"></i>
+            <p><strong>SEO Optimization:</strong> Improve your website's visibility and ranking.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-cogs"></i>
+            <p><strong>IT Consulting Solutions:</strong> Get expert advice on the best technology solutions for your business, including web services, SEO, and database design.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-lock"></i>
+            <p><strong>Cybersecurity & IT Security Solutions:</strong> Protect your business with our comprehensive security solutions.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-cloud"></i>
+            <p><strong>Cloud Computing and Hosting:</strong> Seamless cloud integration and management services provide off-premise solutions for your business.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-server"></i>
+            <p><strong>SaaS (Software as a Service):</strong> Our SaaS solutions provide easy access to software and services from anywhere, anytime.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-database"></i>
+            <p><strong>Data Management:</strong> We provide servers and data management solutions to ensure your data is secure and accessible. Manage your customer interactions and relationships with our CRM solutions.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-network-wired"></i>
+            <p><strong>Computer Networking:</strong> Our network infrastructure services help optimize your network performance and increase efficiency.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-shopping-cart"></i>
+            <p><strong>Software & Hardware Procurement:</strong> Find the right technology solutions for your business with our software and hardware procurement services. Streamline your business processes with our productivity tools and solutions.</p>
+        </div>
+    </section>
+    <section id="portfolio">
+        <div class="heading-icon"><i class="fas fa-briefcase"></i></div>
+        <h2>Our Portfolio</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3> E-Commerce Platform for Fashion Bug Retail Companies LLC</h3>
+                <p>Client: Fashion Bug Retail Companies LLC Overview: CalmnClassy Dev designed and developed a state-of-the-art e-commerce platform for our company. The platform included user-friendly navigation, secure payment gateways, and an advanced inventory management system. Impact: The new e-commerce platform resulted in a 40% increase in online sales and improved customer satisfaction.</p>
+            </div>
+            <div class="project">
+                <h3> Custom CRM Solution for ImaliPay</h3>
+                <p>Client: ImaliPay Ltd. Overview: We developed a custom Customer Relationship Management (CRM) solution for ImaliPay Ltd. The CRM system streamlined their client management processes, enhanced data security, and provided detailed analytics and reporting. Impact: The CRM solution improved client engagement and increased the firm's operational efficiency by 30%.</p>
+            </div>
+            <div class="project">
+                <h3> Cybersecurity Implementation for Ohospital Cloud</h3>
+                <p>Client: Ohospital Cloud Overview: CalmnClassy Dev implemented a comprehensive cybersecurity solution for Ohospital Cloud. This included setting up firewalls, encrypting sensitive patient data, and conducting regular security audits. Impact: The healthcare provider experienced zero data breaches and improved compliance with industry regulations, ensuring the safety and privacy of patient information.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    </footer>
+</body>
+</html>
