@@ -1,5 +1,5 @@
 [project]
-name = "rebuild 1-0"
+name = "rebuild-1-0"
 version = "0.1.0"
 description = ""
 authors = [
@@ -17,3 +17,6 @@ packages = [{include = "rebuild 1"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+waitress = "^2.1.2"
