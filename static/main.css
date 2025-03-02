@@ -1,0 +1,344 @@
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('{{ url_for('static', filename='logo.png') }}') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 2;
+    transition: opacity 0.3s;
+}
+
+/* Header styles */
+header {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: white;
+    padding: 1em 0; /* Reduced padding */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: rgba(34, 34, 34, 1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 2em;
+}
+
+#company-logo {
+    width: 120px; /* Reduced logo size */
+    height: auto;
+    margin-right: 1em;
+}
+
+.header-text {
+    text-align: center;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em; /* Adjusted font size */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Section styles */
+h1 {
+    font-size: 2.2em; /* Adjusted font size */
+    transition: color 0.3s;
+}
+
+h1:hover {
+    color: #4CAF50; /* Turn green on hover */
+}
+
+h2 {
+    font-size: 1.9em; /* Adjusted font size */
+}
+
+h3 {
+    font-size: 1.6em; /* Adjusted font size */
+}
+
+section {
+    padding: 3em 2em; /* Adjusted padding */
+    margin: 2em auto;
+    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#intro, #about, #services, #whycnc, #contact, #rss, #blog, #cta, #portfolio, #testimonials {
+    padding: 4em 2em;
+    text-align: center;
+}
+
+/* Icon styles */
+.heading-icon {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.heading-icon i {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
+/* Service icon styles */
+.service i {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 0.5em;
+}
+
+/* Services container styles */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service {
+    flex: 1 1 30%;
+    background: white;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Portfolio container styles */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    flex: 1 1 45%;
+    background: white;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Contact form styles */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+#contact form input,
+#contact form select,
+#contact form textarea {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 500px;
+    transition: border-color 0.3s;
+}
+
+#contact form input:focus,
+#contact form select:focus,
+#contact form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#contact form button {
+    padding: 0.75em 2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#contact form button:hover {
+    background-color: #45a049;
+}
+
+#contact p {
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+
+/* RSS feed styles */
+#rss ul {
+    list-style: none;
+    padding: 0;
+}
+
+#rss li {
+    margin-bottom: 2em;
+}
+
+#rss li a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+#rss li p {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+
+/* Testimonials styles */
+#testimonials .testimonial {
+    background: white;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+#testimonials .testimonial p {
+    margin: 0.5em 0;
+}
+
+#testimonials .testimonial strong {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 1.2em;
+}
+
+/* Blog section styles */
+#blog a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 1.2em;
+    display: block;
+    margin: 1em 0;
+}
+
+#blog a img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+/* Call to Action (CTA) styles */
+#cta button {
+    padding: 1em 2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#cta button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1em 0; /* Reduced padding */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 1em;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+footer:hover {
+    background-color: rgba(34, 34, 34, 1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+footer .social-icons {
+    margin-top: 1em;
+}
+
+footer .social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5em;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #4CAF50;
+}
+
+/* FAQ Carousel styles */
+#faq-carousel {
+    position: relative;
+    text-align

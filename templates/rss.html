@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Feed - CalmnClassy Dev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Latest Articles</h1>
+        <p>Stay updated with the latest articles from TechCrunch.</p>
+    </header>
+
+    <section id="rss">
+        <ul>
+            {% for entry in feed %}
+            <li>
+                <a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a>
+                <p>{{ entry.summary }}</p>
+                <p><small>Published on: {{ entry.published }}</small></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    </footer>
+</body>
+</html>
