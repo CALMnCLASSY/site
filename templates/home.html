@@ -212,10 +212,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             // Change button text to 'Sent'
             sendButton.textContent = 'Sent';
 
-            // Optionally disable the button to prevent multiple submissions
+            //disable the button to prevent multiple submissions
             sendButton.disabled = true;
 
-            // Reset button text and color after a delay (optional)
+            // Reset button text and color after a delay
             setTimeout(() => {
                 sendButton.textContent = 'Send';
                 sendButton.style.backgroundColor = '#4CAF50'; // Original green

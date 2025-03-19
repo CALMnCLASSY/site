@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'calmnclassydev@gmail.com'  # Replace with your email
-app.config['MAIL_PASSWORD'] = 'orbn gmyr ecpe fkgo'  # Replace with your app password
+app.config['MAIL_USERNAME'] = 'calmnclassydev@gmail.com'
+app.config['MAIL_PASSWORD'] = 'orbn gmyr ecpe fkgo'
 
 mail = Mail(app)
 RSS_FEED_URL = 'https://techcrunch.com/feed/'

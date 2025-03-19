@@ -70,24 +70,24 @@ nav ul li a:hover {
 
 /* Section styles */
 h1 {
-    font-size: 2.2em; /* Adjusted font size */
+    font-size: 2.2em;
     transition: color 0.3s;
 }
 
 h1:hover {
-    color: #4CAF50; /* Turn green on hover */
+    color: #4CAF50;
 }
 
 h2 {
-    font-size: 1.9em; /* Adjusted font size */
+    font-size: 1.9em;
 }
 
 h3 {
-    font-size: 1.6em; /* Adjusted font size */
+    font-size: 1.6em;
 }
 
 section {
-    padding: 3em 2em; /* Adjusted padding */
+    padding: 3em 2em;
     margin: 2em auto;
     max-width: 800px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -304,7 +304,7 @@ footer {
     background-color: rgba(34, 34, 34, 0.8);
     color: white;
     text-align: center;
-    padding: 1em 0; /* Reduced padding */
+    padding: 1em 0;
     position: fixed;
     width: 100%;
     bottom: 0;
