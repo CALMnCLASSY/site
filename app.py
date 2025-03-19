@@ -1,8 +1,11 @@
+print("your_app_module.py: Starting...")
 from flask import Flask, render_template, request, redirect, url_for, jsonify
+print("your_app_module.py: Flask imported.")
 from flask_mail import Mail, Message
 import feedparser
 
 app = Flask(__name__)
+print("your_app_module.py: Flask app created.")
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -56,5 +59,5 @@ def rss():
     return render_template('rss.html', feed=feed.entries)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+    #app.run(debug=True)

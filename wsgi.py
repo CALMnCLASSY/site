@@ -1,5 +1,5 @@
+print("wsgi.py: Starting...")
 from app import app
-
-# Expose the app object as the WSGI application
+print("wsgi.py: Application imported.")
 application = app
-
+print("wsgi.py: Application assigned.")
