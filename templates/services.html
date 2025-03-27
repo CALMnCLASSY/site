@@ -11,20 +11,33 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('services') }}">Our Services</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            </ul>
+          <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          </ul>
         </nav>
         <div class="header-content">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-            <div class="header-text">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
+          <div class="header-text">
                 <h1>Our Services</h1>
                 <p>Discover the range of services we offer to help your business thrive in the digital age.</p>
             </div>
         </div>
+        <button id="darkModeToggle">🌓</button>
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  });
+
+  // Load saved preference
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
     </header>
 
     <section id="services">
@@ -87,10 +100,53 @@
             </div>
         </div>
     </section>
-
-
     <footer>
-        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+        <div class="footer-container">
+            <!-- Left Section: Favicon and Links -->
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
+                <div class="footer-links-container">
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                    </ul>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="{{ url_for('blog') }}">Blogs</a></li>
+                    </ul>
+            </div>
+    
+            <!-- Center Section: Paragraph Text -->
+            <div class="footer-center">
+                <p>Crafting digital excellence with a touch of class.</p>
+                <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+            </div>
+    
+            <!-- Right Section: Social Icons -->
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+    <button id="back-to-top" title="Go to top">↑</button>
+    <script>
+      window.onscroll = function() {
+        const btn = document.getElementById('back-to-top');
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+      };
+      document.getElementById('back-to-top').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+
 </body>
 </html>

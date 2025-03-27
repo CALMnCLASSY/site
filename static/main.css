@@ -1,26 +1,47 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --section-bg: rgba(255, 255, 255, 0.9);
+  }
+  
+  .dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --section-bg: rgba(30, 30, 30, 0.9);
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  section {
+    background: var(--section-bg);
+  }
 /* General styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #333;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-                url('{{ url_for('static', filename='logo.png') }}') no-repeat center center fixed;
+    background: linear-gradient(to bottom, #ffffff, #94a890); /* Light gradient */
+    background-attachment: fixed; /* Ensures the gradient stays fixed during scrolling */
     background-size: cover;
-    opacity: 2;
-    transition: opacity 0.3s;
+    transition: background-color 0.3s;
 }
 
 /* Header styles */
 header {
     background-color: rgba(34, 34, 34, 0.8);
     color: white;
-    padding: 1em 0; /* Reduced padding */
+    padding: 0.1em 0; /* Reduced padding */
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
 }
 
 header:hover {
@@ -138,13 +159,13 @@ section:hover {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, z-index 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .service:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #a8afaa;
 }
 
 /* Portfolio container styles */
@@ -299,46 +320,315 @@ section:hover {
     background-color: #45a049;
 }
 
-/* Footer styles */
+/* Modern Footer */
 footer {
     background-color: rgba(34, 34, 34, 0.8);
     color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 1em;
-    z-index: 1000;
-    transition: background-color 0.3s;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 footer:hover {
     background-color: rgba(34, 34, 34, 1);
 }
 
-footer p {
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 5px;
+    background-color:  rgba(34, 34, 34, 0.8);
+    color: white;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-left {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.footer-left .footer-favicon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 50px; /* Adjust the size of the favicon */
+    height: 50px;
+    margin-right: 15px; /* Add spacing between the favicon and the links */
+    border-radius: 50%; /* Make the favicon circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-left .footer-favicon:hover {
+    transform: scale(1.2); /* Slightly enlarge the favicon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    transform: scale(1.1); /* Slightly enlarge the favicon on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+}
+
+.footer-left .footer-links {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
 }
 
-footer .social-icons {
-    margin-top: 1em;
+.footer-left .footer-links li {
+    margin: 5px 0;
 }
 
-footer .social-icons a {
+.footer-left .footer-links a {
     color: white;
     text-decoration: none;
-    margin: 0 0.5em;
-    font-size: 1.5em;
-    transition: color 0.3s;
+    font-size: 14px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-footer .social-icons a:hover {
-    color: #4CAF50;
+.footer-left .footer-links a:hover {
+    transform: translateX(5px); /* Slightly move the link to the right */
+    color: #50885e; /* Change color on hover */
+
+}
+
+.footer-center p {
+    margin: 5px 0;
+}
+
+.footer-right .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-right .social-icons a:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon */
+    color: #4f9850; /* Change color on hover */
+}
+
+.footer-right .social-icons a:hover {
+    color: #4faa43;
 }
 
 /* FAQ Carousel styles */
 #faq-carousel {
     position: relative;
-    text-align
+    text-align: center;
+}
+
+/* Back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 80px; /* Above footer */
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 999;
+  }
+  #back-to-top:hover {
+    background-color: #45a049;
+  }
+  /* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  /* Blog Preview (on About page) */
+#blog-preview {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+.blog-preview-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.blog-preview-item {
+    flex: 1 1 30%;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.see-all {
+    display: inline-block;
+    margin-top: 1em;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Full Blog Page */
+.blog-posts {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    margin-bottom: 2em;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* Blog image styles */
+.blog-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1em;
+}
+
+.blog-post {
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners match */
+}
+/* FAQ Carousel Styling */
+#faq-carousel {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.faq-slide {
+    flex: 0 0 100%;
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.faq-slide h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.faq-slide p {
+    font-size: 16px;
+    color: #555;
+}
+
+.faq-slide.active {
+    display: block;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #ff5722;
+}
+
+/* Footer Styling */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-favicon {
+    width: 50px; /* Adjust the size of the favicon */
+    height: 50px;
+    margin-right: 15px; /* Add spacing between the favicon and the links */
+    border-radius: 50%; /* Make the favicon circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-favicon:hover {
+    transform: scale(1.1); /* Slightly enlarge the favicon on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+}
+
+.footer-links-container {
+    display: flex;
+    gap: 20px; /* Space between the two columns */
+}
+
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4e7747; /* Highlight color on hover */
+}
