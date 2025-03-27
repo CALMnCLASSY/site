@@ -70,7 +70,6 @@
 
         <p>Reach out to us at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 745 087 451</p>
     </section>
-
     <footer>
         <div class="footer-container">
             <!-- Left Section: Favicon and Links -->
@@ -78,10 +77,7 @@
                 <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
                 <div class="footer-links-container">
                     <ul class="footer-links">
-                        <li><a href="{{ url_for('about') }}">About Us</a></li>
                         <li><a href="{{ url_for('services') }}">Services</a></li>
-                    </ul>
-                    <ul class="footer-links">
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
                         <li><a href="{{ url_for('blog') }}">Blogs</a></li>
                     </ul>
@@ -90,7 +86,6 @@
             <!-- Center Section: Paragraph Text -->
             <div class="footer-center">
                 <p>Crafting digital excellence with a touch of class.</p>
-                <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
             </div>
     
             <!-- Right Section: Social Icons -->
@@ -103,7 +98,11 @@
                 </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+        </div>
     </footer>
+    
     <button id="back-to-top" title="Go to top">↑</button>
 <script>
   window.onscroll = function() {

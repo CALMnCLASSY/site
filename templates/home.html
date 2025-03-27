@@ -246,7 +246,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
             <div class="footer-links-container">
                 <ul class="footer-links">
-                    <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('services') }}">Services</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     <li><a href="{{ url_for('blog') }}">Blogs</a></li>
@@ -268,7 +267,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             </div>
         </div>
     </div>
-    <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    <div class="footer-bottom">
+        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    </div>
 </footer>
 
    <button id="back-to-top" title="Go to top">↑</button>

@@ -322,13 +322,11 @@ section:hover {
 
 /* Modern Footer */
 footer {
-    background-color: rgba(34, 34, 34, 0.8);
+    background-color: #333;
     color: white;
-    padding: 5px 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px 0;
 }
+
 footer:hover {
     background-color: rgba(34, 34, 34, 1);
 }
@@ -336,12 +334,8 @@ footer:hover {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 5px;
-    background-color:  rgba(34, 34, 34, 0.8);
-    color: white;
+    align-items: flex-start;
+    padding: 10px 20px;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -350,14 +344,13 @@ footer:hover {
 }
 
 .footer-left {
-    text-align: left;
     display: flex;
     align-items: center;
 }
 
 .footer-left .footer-favicon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 50px; /* Adjust the size of the favicon */
@@ -403,6 +396,12 @@ footer:hover {
 
 .footer-center p {
     margin: 5px 0;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .footer-right .social-icons a {
@@ -576,13 +575,20 @@ button.prev:hover, button.next:hover {
 }
 
 /* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+footer:hover {
+    background-color: rgba(34, 34, 34, 1);
+}
 .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: #333;
-    color: white;
+    align-items: flex-start;
+    padding: 10px 20px;
 }
 
 .footer-left {
@@ -591,31 +597,22 @@ button.prev:hover, button.next:hover {
 }
 
 .footer-favicon {
-    width: 50px; /* Adjust the size of the favicon */
+    width: 50px;
     height: 50px;
-    margin-right: 15px; /* Add spacing between the favicon and the links */
-    border-radius: 50%; /* Make the favicon circular */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.footer-favicon:hover {
-    transform: scale(1.1); /* Slightly enlarge the favicon on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .footer-links-container {
     display: flex;
-    gap: 20px; /* Space between the two columns */
+    flex-direction: column;
 }
-
 
 .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 .footer-links li {
@@ -630,5 +627,38 @@ button.prev:hover, button.next:hover {
 }
 
 .footer-links a:hover {
-    color: #4e7747; /* Highlight color on hover */
+    color: #4e7747;
+}
+
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-right .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-right .social-icons a:hover {
+    transform: scale(1.2);
+    color: #4e7747;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid #555; /* Optional: Add a separator line */
+    font-size: 12px;
 }
