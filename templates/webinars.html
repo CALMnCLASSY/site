@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinars - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('solutions') }}" class="nav-link">
+                            <i class="fas fa-lightbulb"></i> Solutions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Webinars Hero Section -->
+    <section class="webinars-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tech <span class="text-gradient">Webinars</span></h1>
+                <p class="hero-subtitle">Learn from industry experts through our free educational webinars</p>
+                <div class="hero-buttons">
+                    <a href="#upcoming-webinars" class="primary-button">
+                        Upcoming Webinars <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="#past-webinars" class="secondary-button">
+                        <i class="fas fa-archive"></i> Past Webinars
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Webinars" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Webinars Section -->
+    <section id="upcoming-webinars" class="webinars-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming <span class="text-gradient">Webinars</span></h2>
+                <p class="section-description">Register for our upcoming live sessions</p>
+            </div>
+            
+            <div class="webinars-grid">
+                <!-- Webinar 1 -->
+                <div class="webinar-card">
+                    <div class="webinar-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                    <div class="webinar-content">
+                        <div class="webinar-category">Cloud Computing</div>
+                        <h3 class="webinar-title">Migrating to AWS: Best Practices</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-clock"></i> 2:00 PM - 3:30 PM EAT</span>
+                            <span><i class="fas fa-user"></i> Wanjiru Kariuki</span>
+                        </div>
+                        <p class="webinar-description">Learn the step-by-step process for successfully migrating your infrastructure to AWS with minimal downtime.</p>
+                        <a href="#register" class="primary-button">
+                            Register Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Webinar 2 -->
+                <div class="webinar-card">
+                    <div class="webinar-date">
+                        <span class="date-day">22</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                    <div class="webinar-content">
+                        <div class="webinar-category">Cybersecurity</div>
+                        <h3 class="webinar-title">Protecting Against Ransomware</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-clock"></i> 11:00 AM - 12:30 PM EAT</span>
+                            <span><i class="fas fa-user"></i> Ian Kipchirchir</span>
+                        </div>
+                        <p class="webinar-description">Essential strategies to defend your organization against the growing threat of ransomware attacks.</p>
+                        <a href="#register" class="primary-button">
+                            Register Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Webinar 3 -->
+                <div class="webinar-card">
+                    <div class="webinar-date">
+                        <span class="date-day">05</span>
+                        <span class="date-month">JUL</span>
+                    </div>
+                    <div class="webinar-content">
+                        <div class="webinar-category">Web Development</div>
+                        <h3 class="webinar-title">React 18 New Features</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-clock"></i> 3:00 PM - 4:30 PM EAT</span>
+                            <span><i class="fas fa-user"></i> David Owino</span>
+                        </div>
+                        <p class="webinar-description">Deep dive into the latest features of React 18 and how to leverage them in your projects.</p>
+                        <a href="#register" class="primary-button">
+                            Register Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinar Registration Section -->
+    <section id="register" class="registration-section bg-light">
+        <div class="section-container">
+            <div class="registration-container">
+                <div class="registration-content">
+                    <h2 class="section-title">Register for <span class="text-gradient">Webinars</span></h2>
+                    <p>Fill out the form to reserve your spot in our upcoming webinars. You'll receive a confirmation email with joining instructions.</p>
+                    
+                    <div class="webinar-benefits">
+                        <h3>Why Attend Our Webinars?</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Learn from industry experts</li>
+                            <li><i class="fas fa-check-circle"></i> Get your questions answered live</li>
+                            <li><i class="fas fa-check-circle"></i> Free access to webinar recordings</li>
+                            <li><i class="fas fa-check-circle"></i> Network with other professionals</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <form class="registration-form">
+                    <div class="form-group">
+                        <label for="webinar-select">Select Webinar *</label>
+                        <select id="webinar-select" name="webinar" required>
+                            <option value="">Choose a webinar</option>
+                            <option value="aws-migration">Migrating to AWS: Best Practices (Jun 15)</option>
+                            <option value="ransomware">Protecting Against Ransomware (Jun 22)</option>
+                            <option value="react-18">React 18 New Features (Jul 5)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-name">Full Name *</label>
+                        <input type="text" id="reg-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">Email Address *</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-company">Company/Organization</label>
+                        <input type="text" id="reg-company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-questions">Questions/Topics You'd Like Covered</label>
+                        <textarea id="reg-questions" name="questions"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="primary-button">
+                        Register Now <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Webinars Section -->
+    <section id="past-webinars" class="past-webinars-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Past <span class="text-gradient">Webinars</span></h2>
+                <p class="section-description">Access recordings and materials from previous sessions</p>
+            </div>
+            
+            <div class="past-webinars-grid">
+                <!-- Past Webinar 1 -->
+                <div class="past-webinar-card">
+                    <div class="webinar-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cloud Architecture">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="webinar-details">
+                        <div class="webinar-category">Cloud Computing</div>
+                        <h3>Designing Scalable Cloud Architecture</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 18, 2023</span>
+                            <span><i class="fas fa-user"></i> Wanjiru Kariuki</span>
+                        </div>
+                        <p>Learn how to design cloud systems that can scale seamlessly with your business growth.</p>
+                        <a href="#" class="secondary-button">
+                            Watch Recording <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Past Webinar 2 -->
+                <div class="past-webinar-card">
+                    <div class="webinar-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="webinar-details">
+                        <div class="webinar-category">Cybersecurity</div>
+                        <h3>Zero Trust Security Model</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 12, 2023</span>
+                            <span><i class="fas fa-user"></i> Linda Awuor</span>
+                        </div>
+                        <p>Implementing Zero Trust principles to protect your organization's data and systems.</p>
+                        <a href="#" class="secondary-button">
+                            Watch Recording <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Past Webinar 3 -->
+                <div class="past-webinar-card">
+                    <div class="webinar-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Web Development">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="webinar-details">
+                        <div class="webinar-category">Web Development</div>
+                        <h3>Modern JavaScript Frameworks</h3>
+                        <div class="webinar-meta">
+                            <span><i class="far fa-calendar-alt"></i> March 8, 2023</span>
+                            <span><i class="fas fa-user"></i> David Owino</span>
+                        </div>
+                        <p>Comparing React, Angular, and Vue.js for different project requirements.</p>
+                        <a href="#" class="secondary-button">
+                            Watch Recording <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="#" class="primary-button">
+                    View All Past Webinars <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinar Topics Section -->
+    <section class="topics-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Webinar <span class="text-gradient">Topics</span></h2>
+                <p class="section-description">Explore our most popular webinar categories</p>
+            </div>
+            
+            <div class="topics-grid">
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>Migration strategies, cost optimization, and architecture best practices.</p>
+                </a>
+                
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Protecting your business from evolving digital threats.</p>
+                </a>
+                
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern frameworks, performance optimization, and best practices.</p>
+                </a>
+                
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Cross-platform strategies and native app development.</p>
+                </a>
+                
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data & Analytics</h3>
+                    <p>Turning data into actionable business insights.</p>
+                </a>
+                
+                <a href="#" class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Practical applications of AI for businesses.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                        <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Webinar Updates</h3>
+                    <p class="newsletter-text">
+                        Get notified about upcoming webinars and events.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Registration form handling
+        document.querySelector('.registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'form-success';
+                successMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Registration Successful!</h3>
+                    <p>Thank you for registering. You'll receive a confirmation email with webinar details shortly.</p>
+                `;
+                this.parentNode.insertBefore(successMessage, this.nextSibling);
+                
+                // Reset form
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        });
+
+        // Play button hover effects for past webinars
+        document.querySelectorAll('.past-webinar-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const playButton = card.querySelector('.play-button');
+                playButton.style.transform = 'scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const playButton = card.querySelector('.play-button');
+                playButton.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

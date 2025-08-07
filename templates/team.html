@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('home') }}" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}" class="active"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Team Hero Section -->
+    <section class="team-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Meet Our <span class="text-gradient">Team</span></h1>
+                <p class="hero-subtitle">The brilliant minds behind CalmnClassy Dev's success</p>
+                <div class="hero-buttons">
+                    <a href="#leadership" class="primary-button">
+                        Our Leadership <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="{{ url_for('careers') }}" class="secondary-button">
+                        <i class="fas fa-briefcase"></i> Join Our Team
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1571260898930-5c151a3180aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section id="leadership" class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Executive <span class="text-gradient">Leadership</span></h2>
+                <p class="section-description">Our visionary leaders guiding the company's strategic direction</p>
+            </div>
+            
+            <div class="team-grid leadership-grid">
+                <!-- CEO -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/john-doe.jpg') }}" alt="John Doe">
+                        <div class="member-badge">CEO & Founder</div>
+                    </div>
+                    <h3>John Doe</h3>
+                    <p class="member-title">Chief Executive Officer</p>
+                    <p class="member-bio">With over 15 years in the tech industry, John founded CalmnClassy Dev with a vision to deliver sophisticated IT solutions.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- CTO -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/jane-smith.jpg') }}" alt="Jane Smith">
+                        <div class="member-badge">CTO</div>
+                    </div>
+                    <h3>Jane Smith</h3>
+                    <p class="member-title">Chief Technology Officer</p>
+                    <p class="member-bio">Jane leads our technical strategy with expertise in cloud architecture and scalable systems design.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- CFO -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/michael-ngugi.jpg') }}" alt="Michael Ngugi">
+                        <div class="member-badge">CFO</div>
+                    </div>
+                    <h3>Michael Ngugi</h3>
+                    <p class="member-title">Chief Financial Officer</p>
+                    <p class="member-bio">Michael oversees financial strategy and operations with 12+ years of fintech experience.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- COO -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/sarah-juma.jpg') }}" alt="Sarah Juma">
+                        <div class="member-badge">COO</div>
+                    </div>
+                    <h3>Sarah Juma</h3>
+                    <p class="member-title">Chief Operations Officer</p>
+                    <p class="member-bio">Sarah ensures operational excellence across all departments and client engagements.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Team Section -->
+    <section class="team-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Development <span class="text-gradient">Team</span></h2>
+                <p class="section-description">Our talented engineers building cutting-edge solutions</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Senior Developer 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/david-owino.jpg') }}" alt="David Owino">
+                        <div class="member-badge">Senior Developer</div>
+                    </div>
+                    <h3>David Owino</h3>
+                    <p class="member-title">Lead Full-Stack Developer</p>
+                    <p class="member-bio">Specializing in React and Node.js, David builds robust web applications for our clients.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Senior Developer 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/grace-mwangi.jpg') }}" alt="Grace Mwangi">
+                        <div class="member-badge">Senior Developer</div>
+                    </div>
+                    <h3>Grace Mwangi</h3>
+                    <p class="member-title">Backend Systems Architect</p>
+                    <p class="member-bio">Grace designs scalable backend systems with expertise in Python and Django.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Developer -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/peter-kamau.jpg') }}" alt="Peter Kamau">
+                        <div class="member-badge">Mobile Developer</div>
+                    </div>
+                    <h3>Peter Kamau</h3>
+                    <p class="member-title">Lead Mobile Developer</p>
+                    <p class="member-bio">Peter creates beautiful cross-platform mobile apps using Flutter and React Native.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- DevOps Engineer -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/faith-akinyi.jpg') }}" alt="Faith Akinyi">
+                        <div class="member-badge">DevOps Engineer</div>
+                    </div>
+                    <h3>Faith Akinyi</h3>
+                    <p class="member-title">Senior DevOps Engineer</p>
+                    <p class="member-bio">Faith ensures our deployments are seamless and our infrastructure is rock-solid.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- UI/UX Designer -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/james-mwai.jpg') }}" alt="James Mwai">
+                        <div class="member-badge">UI/UX Designer</div>
+                    </div>
+                    <h3>James Mwai</h3>
+                    <p class="member-title">Lead UI/UX Designer</p>
+                    <p class="member-bio">James crafts intuitive, beautiful interfaces that enhance user experience.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <!-- QA Engineer -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/mercy-odhiambo.jpg') }}" alt="Mercy Odhiambo">
+                        <div class="member-badge">QA Engineer</div>
+                    </div>
+                    <h3>Mercy Odhiambo</h3>
+                    <p class="member-title">Quality Assurance Lead</p>
+                    <p class="member-bio">Mercy ensures our solutions meet the highest quality standards before delivery.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Team Section -->
+    <section class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Cybersecurity <span class="text-gradient">Team</span></h2>
+                <p class="section-description">Experts protecting our clients' digital assets</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Security Specialist 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/ian-kipchirchir.jpg') }}" alt="Ian Kipchirchir">
+                        <div class="member-badge">Security Specialist</div>
+                    </div>
+                    <h3>Ian Kipchirchir</h3>
+                    <p class="member-title">Head of Cybersecurity</p>
+                    <p class="member-bio">Ian leads our security initiatives with expertise in penetration testing and threat analysis.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Security Specialist 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/linda-awuor.jpg') }}" alt="Linda Awuor">
+                        <div class="member-badge">Security Specialist</div>
+                    </div>
+                    <h3>Linda Awuor</h3>
+                    <p class="member-title">Security Architect</p>
+                    <p class="member-bio">Linda designs secure systems and infrastructure for our enterprise clients.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Team Section -->
+    <section class="team-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Consulting <span class="text-gradient">Team</span></h2>
+                <p class="section-description">Strategic advisors helping clients maximize technology investments</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- IT Consultant 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/brian-maina.jpg') }}" alt="Brian Maina">
+                        <div class="member-badge">IT Consultant</div>
+                    </div>
+                    <h3>Brian Maina</h3>
+                    <p class="member-title">Senior IT Consultant</p>
+                    <p class="member-bio">Brian helps businesses align technology with their strategic objectives.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- IT Consultant 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/wanjiru-kariuki.jpg') }}" alt="Wanjiru Kariuki">
+                        <div class="member-badge">IT Consultant</div>
+                    </div>
+                    <h3>Wanjiru Kariuki</h3>
+                    <p class="member-title">Cloud Solutions Architect</p>
+                    <p class="member-bio">Wanjiru specializes in cloud migration and optimization strategies.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Business Analyst -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/dennis-omondi.jpg') }}" alt="Dennis Omondi">
+                        <div class="member-badge">Business Analyst</div>
+                    </div>
+                    <h3>Dennis Omondi</h3>
+                    <p class="member-title">Lead Business Analyst</p>
+                    <p class="member-bio">Dennis bridges the gap between business needs and technical solutions.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operations Team Section -->
+    <section class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Operations <span class="text-gradient">Team</span></h2>
+                <p class="section-description">The backbone of our company's smooth functioning</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- HR Manager -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/esther-nduta.jpg') }}" alt="Esther Nduta">
+                        <div class="member-badge">HR Manager</div>
+                    </div>
+                    <h3>Esther Nduta</h3>
+                    <p class="member-title">Human Resources Manager</p>
+                    <p class="member-bio">Esther fosters our company culture and manages talent acquisition.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Marketing Specialist -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/kevin-mutua.jpg') }}" alt="Kevin Mutua">
+                        <div class="member-badge">Marketing Specialist</div>
+                    </div>
+                    <h3>Kevin Mutua</h3>
+                    <p class="member-title">Digital Marketing Lead</p>
+                    <p class="member-bio">Kevin drives our brand awareness and client acquisition strategies.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Customer Success -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/joyce-wambui.jpg') }}" alt="Joyce Wambui">
+                        <div class="member-badge">Customer Success</div>
+                    </div>
+                    <h3>Joyce Wambui</h3>
+                    <p class="member-title">Customer Success Manager</p>
+                    <p class="member-bio">Joyce ensures our clients achieve maximum value from our solutions.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Support Engineer -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/paul-otieno.jpg') }}" alt="Paul Otieno">
+                        <div class="member-badge">Support Engineer</div>
+                    </div>
+                    <h3>Paul Otieno</h3>
+                    <p class="member-title">Technical Support Lead</p>
+                    <p class="member-bio">Paul provides exceptional technical support to our clients.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Culture Section -->
+    <section class="culture-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Culture</span></h2>
+                <p class="section-description">What makes working at CalmnClassy Dev special</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We encourage creative thinking and experimentation to solve complex problems.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Teamwork is at our core - we believe the best solutions come from diverse perspectives.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>We invest in our team's growth with training, conferences, and mentorship programs.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible schedules and remote options to support our team's wellbeing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Team CTA -->
+    <section class="join-team-section">
+        <div class="section-container">
+            <div class="join-team-content">
+                <h2>Want to Join Our Team?</h2>
+                <p>We're always looking for talented individuals to join our growing company.</p>
+                <a href="{{ url_for('careers') }}" class="primary-button">
+                    View Open Positions <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('about') }}"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Team Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Our Team</h3>
+                    <ul class="footer-links">
+                        <li><a href="#leadership"><i class="fas fa-chevron-right"></i> Leadership</a></li>
+                        <li><a href="#development"><i class="fas fa-chevron-right"></i> Development</a></li>
+                        <li><a href="#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                        <li><a href="#consulting"><i class="fas fa-chevron-right"></i> Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for company updates and tech insights.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Team member hover effects
+        document.querySelectorAll('.team-member').forEach(member => {
+            member.addEventListener('mouseenter', () => {
+                const photo = member.querySelector('.member-photo img');
+                photo.style.transform = 'scale(1.05)';
+            });
+            
+            member.addEventListener('mouseleave', () => {
+                const photo = member.querySelector('.member-photo img');
+                photo.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

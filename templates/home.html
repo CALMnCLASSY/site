@@ -3,289 +3,825 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalmnClassy Dev</title>
+    <title>CalmnClassy - Technology Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <style>
+        /* Dynamic gradient animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('services') }}">Our Services</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            </ul>
-        </nav>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CALMnCLASSY" class="header-logo">
+                <span class="company-name">CALMnCLASSY</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                    <a href="{{ url_for('services') }}" class="nav-link">
+                        <i class="fas fa-cubes"></i> Services
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url_for('solutions') }}" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Solutions
+                    </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
 
-        <div class="header-content">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-            <div class="header-text">
-                <h1>CalmnClassy Dev</h1>
-                <p>Your trusted partner in Web Solutions and IT Support</p>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <button id="darkModeToggle">🌓</button>
-<script>
-  const toggle = document.getElementById('darkModeToggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-  });
-
-  // Load saved preference
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
     </header>
 
-    <section id="intro">
-        <h2>Welcome to CalmnClassy Dev</h2>
-        <p>At CalmnClassy Dev, we blend creativity with technology to build exceptional web solutions. Whether you need a stunning website, robust IT support, or strategic consulting, we are here to help your business thrive in the digital age.</p>
-        <p>Our mission is to provide reliable, efficient, and elegant IT solutions that empower your organization to thrive in the digital age.</p>
-    </section>
-
-    <section id="about">
-         <div class="heading-icon"><i class="fas fa-info-circle"></i></div>
-        <h2>About Us</h2>
-        <p>CalmnClassy Dev is a leading IT support agency dedicated to delivering top-notch tech services with a touch of sophistication. We specialize in creating stunning websites and providing top-notch IT services to help businesses thrive in the digital age. Our team of experienced professionals is dedicated to delivering high-quality solutions tailored to meet your unique needs.</p>
-        <p>CnC Dev provides innovative and ingenious information technology services and solutions that range from IT strategy to design and development, to implementation and management, to troubleshooting and support. We focus on your desired business outcomes that meet business requirements and goals to accelerate success. </p>
-        <p>We are the most reliable ICT solutions partner in transforming your company in terms of profitability, quality of solutions or services, customer satisfaction and performance of processes and operations.</p>
-    </section>
-
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service">
-            <i class="fas fa-laptop-code"></i>
-            <p><strong>Custom Software Development & Design:</strong> We design and develop mobile, web, and desktop applications tailored to your specific business needs.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>ICT Services:</strong> Our team provides expertise in information systems to help you implement the right technology for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-search"></i>
-            <p><strong>SEO Optimization:</strong> Improve your website's visibility and ranking.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cogs"></i>
-            <p><strong>IT Consulting Solutions:</strong> Get expert advice on the best technology solutions for your business, including web services, SEO, and database design.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-lock"></i>
-            <p><strong>Cybersecurity & IT Security Solutions:</strong> Protect your business with our comprehensive security solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cloud"></i>
-            <p><strong>Cloud Computing and Hosting:</strong> Seamless cloud integration and management services provide off-premise solutions for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-server"></i>
-            <p><strong>SaaS (Software as a Service):</strong> Our SaaS solutions provide easy access to software and services from anywhere, anytime.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-database"></i>
-            <p><strong>Data Management:</strong> We provide servers and data management solutions to ensure your data is secure and accessible. Manage your customer interactions and relationships with our CRM solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>Computer Networking:</strong> Our network infrastructure services help optimize your network performance and increase efficiency.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-shopping-cart"></i>
-            <p><strong>Software & Hardware Procurement:</strong> Find the right technology solutions for your business with our software and hardware procurement services. Streamline your business processes with our productivity tools and solutions.</p>
-        </div>
-        </div>
-
-    </section>
-
-    <section id="whycnc">
-        <div class="heading-icon"><i class="fas fa-question-circle"></i></div>
-        <h2>Why Choose CnC Dev?</h2>
-        <div class="service">
-            <p><strong>Expertise:</strong> Our team consists of certified professionals with years of experience in the IT industry.</p>
-        </div>
-        <div class="service">
-            <p><strong>Reliability:</strong> We are dedicated to providing dependable and timely support, no matter the challenge.</p>
-        </div>
-        <div class="service">
-            <p><strong>Customer-Centric:</strong> Your satisfaction is our priority. We work closely with you to understand your unique needs and deliver personalized solutions.</p>
-        </div>
-        <div class="service">
-            <p><strong>Innovative Solutions:</strong> We stay ahead of the curve with the latest technology trends to bring you cutting-edge solutions.</p>
-        </div>
-        <p>A smart investment in information technology can result in reduced costs, improved profitability and overall business growth. Stay up to date with the latest in information systems and communication technology to make informed choices that align with your business goals.</p>
-    </section>
-
-    <section id="faq-carousel">
-        <h2><i class="fas fa-question-circle"></i>Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-slide">
-                <h2>What services does CalmnClassy Dev offer?</h2>
-                <p>We offer a wide range of IT services including custom software development, IT consulting, cloud computing, cybersecurity, SEO optimization, and more. We tailor our solutions to meet your specific business needs.</p>
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%); animation: gradientBG 12s ease infinite; background-size: 400% 400%;">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Smart, Reliable IT Support <span class="text-gradient">— so you can focus</span> on  what matters</h1>
+                <p class="hero-subtitle">We combine tech expertise with a calm, client-first approach to keep your business running smoothly—always.</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('services') }}" class="primary-button">
+                        Explore Services <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="secondary-button">
+                        Contact Us <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
             </div>
-            <div class="faq-slide">
-                <h2>How can I contact CalmnClassy Dev for support?</h2>
-                <p>You can reach us via email at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 712 345 678. You can also fill out the contact form on our website, and our team will get back to you promptly.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>What industries do you serve?</h2>
-                <p>We serve a diverse range of industries including healthcare, finance, retail, education, and technology. Our team has the expertise to provide tailored solutions for various business sectors.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>How does CalmnClassy Dev ensure the security of my data?</h2>
-                <p>We implement robust cybersecurity measures to protect your data. This includes encryption, firewalls, regular security audits, and compliance with industry standards. Your data security is our top priority.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>Can you help with website redesign and optimization?</h2>
-                <p>Absolutely! We specialize in website redesign and optimization to improve user experience, increase website speed, and enhance SEO performance. Our goal is to create a stunning and functional website that meets your business objectives.</p>
+            <div class="hero-image">
+                <img src="https://ocdn.eu/pulscms-transforms/1/MRPk9kpTURBXy83ZDJlNTQ5MTQyMTA4YWY1YjA2MmU3MTEzMGRhNTY1YS5qcGeSlQMAGc0DO80B0ZMFzQMWzQGu3gACoTAGoTEA" alt="IT Solutions" class="hero-img">
             </div>
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        <script>
-            let slideIndex = 0;
-            showSlide(slideIndex);
-
-            function moveSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function showSlide(n) {
-                let i;
-                const slides = document.getElementsByClassName("faq-slide");
-                if (n >= slides.length) { slideIndex = 0 }
-                if (n < 0) { slideIndex = slides.length - 1 }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slides[slideIndex].style.display = "block";
-            }
-        </script>
+         <!-- Gradient Decoration -->
+        <div class="gradient-blur-circle" style="background: radial-gradient(circle, rgba(16,185,129,0.4) 0%, rgba(0,0,0,0) 70%);"></div>
     </section>
 
-    <section id="testimonials">
-        <div class="heading-icon"><i class="fas fa-quote-left"></i></div>
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial">
-            <p>""CalmnClassy Dev transformed our website and provided exceptional IT support. Our business has never been more efficient! Their team is professional, responsive, and highly skilled. I highly recommend them to any business in need of top-notch IT services."</p>
-            <p><strong>John Ndung'u, Operations Manager- Paramount Bank Limited</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"The team at CalmnClassy Dev is knowledgeable, responsive, and always ready to help. They developed a custom software solution for us that has significantly improved our operations. Their expertise and commitment to excellence are truly commendable."</p>
-            <p><strong>Anna Smith, Technical Director Susten Energy</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"Working with CalmnClassy Dev was a game-changer for our digital marketing strategy. They optimized our website for SEO and implemented effective strategies that boosted our online visibility. We saw a significant increase in web traffic and conversions. Thank you, CalmnClassy Dev!"</p>
-            <p><strong>Jane Adasa, Executive Assistant at Superior Hotels kenya</strong></p>
-        </div>
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Services</span></h2>
+                <p class="section-description">
+                    Comprehensive solutions tailored to your technical requirements as we engineer digital experiences that drive growth and innovation.
+                </p>
+            </div>
 
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <a href="{{ url_for('services') }}#web-dev" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Software Development</h3>
+                    <p class="service-description">Custom websites and web applications built with modern technologies.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 2 -->
+                <a href="{{ url_for('services') }}#cloud" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">Scalable cloud infrastructure, backups, migration, and hosting services.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 3 -->
+                <a href="{{ url_for('services') }}#cybersecurity" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Cybersecurity</h3>
+                    <p class="service-description">Advanced protection for networks, devices, and sensitive data.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 4 -->
+                <a href="{{ url_for('services') }}#seo" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">SEO Optimization</h3>
+                    <p class="service-description">Boost your online visibility and traffic with proven SEO techniques.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 5 -->
+                <a href="{{ url_for('services') }}#networking" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="service-title">Networking Solutions</h3>
+                    <p class="service-description">Design and setup of reliable wired and wireless networks and network security technologies for your office.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 7 -->
+                <a href="{{ url_for('services') }}#consulting" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="service-title">IT Consulting</h3>
+                    <p class="service-description">Strategic guidance to help you plan, budget, and grow your business online with confidence.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+
+                <!-- Service 8 -->
+                <a href="{{ url_for('services') }}#support" class="service-card hover-transform">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-title">AI & API Development and Integration</h3>
+                    <p class="service-description">Custom AI solutions and API integrations to enhance your business processes.</p>
+                    <div class="service-hover-content">
+                        <span class="learn-more">Learn more <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="service-gradient" style="background: linear-gradient(45deg, rgba(10,25,10,0.8) 0%, rgba(16,185,129,0.2) 100%);"></div>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-       <div class="heading-icon"><i class="fas fa-envelope"></i></div>
-        <h2>Let's Connect</h2>
-        <p>Ready to elevate your IT experience? Contact us today to learn how CalmnClassy Dev can help your business succeed. Together, we’ll navigate the complexities of technology with confidence and style.</p>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <div class="results-widget">
+        <div class="result-card">
+            <div class="result-value" data-count="247">0</div>
+            <div class="result-label">Projects Completed</div>
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="result-card">
+            <div class="result-value" data-count="99.7">0</div>
+            <div class="result-label">Uptime Percentage</div>
+            <div class="result-icon">
+                <i class="fas fa-server"></i>
+            </div>
+        </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="result-card">
+            <div class="result-value" data-count="153">0</div>
+            <div class="result-label">Satisfied Clients</div>
+            <div class="result-icon">
+                <i class="fas fa-smile"></i>
+            </div>
+        </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+        <div class="result-card">
+            <div class="result-value" data-count="24">0</div>
+            <div class="result-label">Expert Team Members</div>
+            <div class="result-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            </div>
+    </div>
+            
+    <section class="about-us-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-description">Pioneering Progress Since 2020</p>
+            </div>
+            
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <h3>Our Journey & Mission</h3>
+                    <p>
+                        Founded in 2020, CALMnCLASSY Dev began with a mission to empower businesses through transformative technology. What started as a small, passionate team has since blossomed into a leading software development and IT support provider. Over the past five years, we've navigated the dynamic tech landscape, continuously adapting and innovating to meet the evolving needs of our clients.
+                    </p>
+                    
+                    <h3>Achievements & Growth</h3>
+                    <p>
+                        Our commitment to excellence has been marked by significant milestones. We are proud to have successfully launched over 50 custom software projects, achieved ISO 9001 certification for our quality management systems, and been recognized as a Top IT Solutions Provider in Nakuru County. Our growth is a direct result of the success and trust of our partners.
+                    </p>
 
-            <button type="submit">Send</button>
-        </form>
-       <p>Reach out to us at <a href="mailto:calmnclassydev@gmail.com">info@calmnclassy.dev</a> or call us at +254 745 087 451</p>
+                    <h3>Building Strategic Partnerships</h3>
+                    <p>
+                        We believe that the greatest solutions are born from collaboration. A core part of our strategy involves building strong, lasting relationships with industry leaders and major corporations. By integrating with their platforms and ecosystems, we deliver enhanced value and create seamless, powerful solutions that drive our clients' success forward.
+                    </p>
+                </div>
+                
+                <div class="about-us-image">
+                    <div class="ceo-card">
+                        <img src="static/ceophoto.jpg" alt="CEO of CalmnClassy Dev" class="ceo-photo">
+                        <div class="ceo-info">
+                            <h4 class="ceo-name">Joshua Odhiambo</h4>
+                            <p class="ceo-title">Founder & CEO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const sendButton = event.target.querySelector('button[type="submit"]');
-  sendButton.textContent = 'Sending...';
-  sendButton.style.backgroundColor = '#045F32';
+    <!-- Why Choose Us Section -->
+    <section class="bg-light" style="padding: 6rem 0; background-color: #0c0c0c;">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;">Why Partner with <span style="color: #10b981;">CALMnCLASSY</span> Dev?</h2>
+                <p class="subtitle" style="color: #a0aec0; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                    The difference is in our approach. We don’t just build technology—we build strategic assets for your business.
+                </p>
+            </div>
 
-  fetch('{{ url_for("send_message") }}', {
-    method: 'POST',
-    body: new FormData(event.target)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      sendButton.textContent = '✓ Sent!';
-      event.target.reset(); // Clear form
-    } else {
-      sendButton.textContent = 'Failed! Try Again';
-      sendButton.style.backgroundColor = '#FF0000';
-    }
-    setTimeout(() => {
-      sendButton.textContent = 'Send';
-      sendButton.style.backgroundColor = '#4CAF50';
-    }, 3000);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    sendButton.textContent = 'Error!';
-    sendButton.style.backgroundColor = '#FF0000';
-  });
-});
-</script>
+            <div class="features-grid" style="margin-top: 4rem;">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Proven Excellence</h3>
+                    <p>With over five years of industry experience since our start in 2020, we have a track record of delivering successful, high-impact projects for clients across multiple sectors, ensuring reliable and measurable results.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Client-Centric Partnership</h3>
+                    <p>Your goals are our goals. We prioritize your business objectives through transparent communication, agile collaboration, and a deep commitment to turning your vision into a reality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative & Future-Proof Solutions</h3>
+                    <p>We leverage cutting-edge technologies and forward-thinking design to build solutions that are not only effective today but are also scalable and adaptable for tomorrow's challenges.</p>
+                </div>
 
-<footer>
-    <div class="footer-container">
-        <!-- Left Section: Favicon and Links -->
-        <div class="footer-left">
-            <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
-            <div class="footer-links-container">
-                <ul class="footer-links">
-                    <li><a href="{{ url_for('services') }}">Services</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a href="{{ url_for('blog') }}">Blogs</a></li>
-                </ul>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Uncompromising Security</h3>
+                    <p>Security is not an afterthought; it's at the core of our development process. We implement robust security measures to protect your data, applications, and reputation from emerging threats.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 4rem;">
+                <p style="font-size: 1.2rem; color: #d1d5db; margin-bottom: 1.5rem;">Ready to see how our approach can benefit you?</p>
+                <a href="{{ url_for('contact') }}" class="cta-button" style="padding: 1rem 2.5rem; font-size: 1rem;">
+                    Schedule a Consultation <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <!-- Center Section: Paragraph Text -->
-        <div class="footer-center">
-            <p>Crafting digital excellence with a touch of class.</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="text-center">
+                <h2>Client Testimonials</h2>
+                <p class="subtitle">Don't just take our word for it</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"CalmnClassy Dev transformed our online presence with a stunning new website that increased our leads by 150%. Their team was professional, responsive, and delivered beyond our expectations."</p>
+                            <div class="testimonial-author">
+                                <img src="{{ url_for('static', filename='testimonial1.jpeg') }}" alt="John Ndung'u">
+                                <div>
+                                    <strong>John Ndung'u</strong>
+                                    <span>Paramount Bank Limited</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"The cloud migration was seamless and our operations have never been more efficient. Their team handled everything from planning to execution perfectly."</p>
+                            <div class="testimonial-author">
+                                <img src="{{ url_for('static', filename='testimonial2.jpeg') }}" alt="Sarah Johnson">
+                                <div>
+                                    <strong>Sarah Johnson</strong>
+                                    <span>TechForward Inc.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"After implementing their cybersecurity solutions, we've had zero breaches. Their 24/7 monitoring gives us peace of mind."</p>
+                            <div class="testimonial-author">
+                                <img src="{{ url_for('static', filename='testimonial3.jpeg') }}" alt="Michael Chen">
+                                <div>
+                                    <strong>Michael Chen</strong>
+                                    <span>Global Retail Group</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Right Section: Social Icons -->
-        <div class="footer-right">
-            <div class="social-icons">
-                <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="section-header">
+            <h2 class="section-title">Our <span class="text-gradient">Case Studies</span></h2>
+            <p class="section-description">Real-world solutions delivering measurable results</p>
+        </div>
+    </div>
+    <div class="case-studies">
+        <div class="case-study" data-industry="healthcare">
+            <div class="case-preview">
+                <img src="https://plus.unsplash.com/premium_photo-1663011454840-48f5fffb737b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8SG9zcGl0YWwlMjB0ZWNofGVufDB8fDB8fHww" alt="Healthcare Solution">
+                <div class="case-overlay">
+                    <h3>Hospital Network Upgrade</h3>
+                    <p>Reduced downtime by 78%</p>
+                </div>
+            </div>
+            <div class="case-details">
+                <button class="close-case">×</button>
+                <h3>Healthcare System Modernization</h3>
+                <p class="case-description">Implemented a fully redundant network infrastructure for a regional hospital network, ensuring 99.99% uptime for critical systems.</p>
+                <div class="case-stats">
+                    <div><strong>300%</strong> Faster Response</div>
+                    <div><strong>Zero</strong> Security Incidents</div>
+                    <div><strong>78%</strong> Downtime Reduction</div>
+                </div>
+                <a href="{{ url_for('case_studies') }}" class="read-case-study">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="case-study" data-industry="finance">
+            <div class="case-preview">
+                <img src="https://plus.unsplash.com/premium_photo-1661301075857-63868ae88c00?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmFua2luZyUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D" alt="Financial Solution">
+                <div class="case-overlay">
+                    <div class="case-badge">Finance</div>
+                    <h3>Banking App Development</h3>
+                    <p>200k+ downloads in first month</p>
+                </div>
+            </div>
+            <div class="case-details">
+                <button class="close-case">×</button>
+                <h3>Mobile Banking Platform</h3>
+                <p class="case-description">Developed a secure, feature-rich mobile banking application with biometric authentication and real-time notifications.</p>
+                <div class="case-stats">
+                    <div><strong>200k+</strong> Downloads</div>
+                    <div><strong>4.9</strong> App Store Rating</div>
+                    <div><strong>40%</strong> More Engagement</div>
+                </div>
+                <a href="{{ url_for('case_studies') }}" class="read-case-study">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <!-- Case Study 3 -->
+        <div class="case-study" data-industry="retail">
+            <div class="case-preview">
+                <img src="https://images.unsplash.com/photo-1648134859196-3aa762e9440d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZSUyMGNvbW1lcmNlJTIwcGxhdGZvcm18ZW58MHx8MHx8fDA%3D" alt="Retail Solution">
+                <div class="case-overlay">
+                    <div class="case-badge">Retail</div>
+                    <h3>E-commerce Platform</h3>
+                    <p>Tripled conversion rates</p>
+                </div>
+            </div>
+            <div class="case-details">
+                <button class="close-case">×</button>
+                <h3>Omnichannel Retail Solution</h3>
+                <p class="case-description">Created a unified commerce platform integrating online and in-store systems with AI-powered recommendations.</p>
+                <div class="case-stats">
+                    <div><strong>3x</strong> Conversions</div>
+                    <div><strong>50%</strong> Faster Checkout</div>
+                    <div><strong>35%</strong> Higher AOV</div>
+                </div>
+                <a href="{{ url_for('case_studies') }}" class="read-case-study">Read Full Case Study <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        <div class="text-center view-all-container">
+            <a href="{{ url_for('case_studies') }}" class="view-all-button">
+                View All Case Studies <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="ai-chat">
+        <button class="chat-toggle">
+            <i class="fas fa-robot"></i> Tech Assistant
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <h4>IT Support Assistant</h4>
+            </div>
+            <div class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" placeholder="Ask about our services...">
+                <button><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Elevate Your Digital Strategy?</h2>
+                <img 
+                    src="https://images.pexels.com/photos/9301875/pexels-photo-9301875.jpeg" 
+                    alt="Teamwork" 
+                    class="cta-image"
+                >
+                <p>Let's discuss how we can help your business thrive in the digital landscape.</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-accent">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="tech-stack">
+        <div class="tech-track">
+            <div class="tech-item">
+                <img src="/aws-logo.svg" alt="AWS">
+                <span>Certified Partner</span>
+            </div>
+            <div class="tech-item">
+                <img src="data:image/png;base64,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" alt="Microsoft Azure" title="Microsoft Azure">
+                <span>Gold Partner</span>
+            </div>
+            <div class="tech-item">
+                <img src="data:image/png;base64,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" alt="Google Cloud" title="Google Cloud Platform">
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnWwWcHpya-SzuqZL8A0EDfnQPpo0Z3BQCCw&s" alt="React" title="React JS">
+            </div>
+            <div class="tech-item">
+                <img src="data:image/jpeg;base64,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" alt="Node.js" title="Node.js">
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSoJCq1b9EzyAtsBf6SzMp2r5CP527T__y6Smr4gfPsugGARNSVtXZT1eLz_th6BWZ_QY&usqp=CAU" alt="Python" title="Python">
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIYlCmR-OU2spUMvg5_SmMi-ka7OFimR2www&s" alt="Django" title="Django">
+            </div>
+            <div class="tech-item">
+                <img src="data:image/png;base64,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" alt="Kubernetes" title="Kubernetes">
+            </div>
+            <div class="tech-item">
+                <img src="data:image/png;base64,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" alt="Docker" title="Docker">
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE4qiTmtVUnXsZBgjjXagGNxF8Hirjgi1ceg&s" alt="MongoDB" title="MongoDB">
+            </div>
+            <div class="tech-item">
+                <img src="data:image/png;base64,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" alt="PostgreSQL" title="PostgreSQL">
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVzPcbXQtrD_CXiUICKlBzABo1fu0tr-9LPdJpBWWgZMQq-7EyZgFRNBIhWa4OcReet74&usqp=CAU" alt="TensorFlow" title="TensorFlow">
+            </div>
+        </div>
     </div>
-</footer>
 
-   <button id="back-to-top" title="Go to top">↑</button>
-<script>
-  window.onscroll = function() {
-    const btn = document.getElementById('back-to-top');
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  };
-  document.getElementById('back-to-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+    <div class="onboarding-timeline">
+        <div class="timeline-step">
+            <div class="step-number">1</div>
+            <h4>Discovery Call</h4>
+            <p>We analyze your needs and business objectives in a free consultation.</p>
+            <div class="step-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+        </div>
+        <div class="timeline-connector"></div>
 
+        <div class="timeline-step">
+            <div class="step-number">2</div>
+            <h4>Solution Design</h4>
+            <p>Our experts create a customized proposal with technology recommendations</p>
+            <div class="step-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+            
+            <div class="timeline-step">
+                <div class="step-number">3</div>
+                <h4>Project Planning</h4>
+                <p>We define milestones, timelines, and success metrics together</p>
+                <div class="step-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+            
+            <div class="timeline-step">
+                <div class="step-number">4</div>
+                <h4>Development Phase</h4>
+                <p>Agile implementation with regular progress updates</p>
+                <div class="step-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+            
+            <div class="timeline-step">
+                <div class="step-number">5</div>
+                <h4>Testing & Quality Assurance</h4>
+                <p>Rigorous testing to ensure flawless performance</p>
+                <div class="step-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+            
+            <div class="timeline-step">
+                <div class="step-number">6</div>
+                <h4>Deployment & Training</h4>
+                <p>Seamless launch and comprehensive training for your team</p>
+                <div class="step-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-connector"></div>
+            
+            <div class="timeline-step">
+                <div class="step-number">7</div>
+                <h4>Ongoing Support</h4>
+                <p>Continuous optimization and 24/7 technical support</p>
+                <div class="step-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline-cta">
+            <h3>Ready to Get Started?</h3>
+            <p>Let us guide your IT transformation — one strategic step at a time.</p>
+            <a href="{{ url_for('contact') }}" class="timeline-cta-button">
+                Start Your Journey<i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Blog/RSS Section -->
+    <section class="blog-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="text-gradient">Tech Insights</span></h2>
+                <p class="section-description">Stay updated with the latest technology trends and industry insights</p>
+            </div>
+            
+            <div class="blog-grid">
+                {% if feed %}
+                    {% for post in feed[:3] %}
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            {% if post.get('media_content') and post.media_content %}
+                                <img src="{{ post.media_content[0]['url'] }}" alt="{{ post.title }}" onerror="this.style.display='none'">
+                            {% elif post.get('links') and post.links %}
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="{{ post.title }}">
+                            {% else %}
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="{{ post.title }}">
+                            {% endif %}
+                            <div class="blog-category">Tech News</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i class="fas fa-calendar-alt"></i> 
+                                    {{ post.published_parsed[:3]|join('-') if post.published_parsed else 'Recent' }}
+                                </span>
+                                <span class="blog-source">
+                                    <i class="fas fa-external-link-alt"></i> TechCrunch
+                                </span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="{{ post.link }}" target="_blank" rel="noopener noreferrer">
+                                    {{ post.title[:80] }}{% if post.title|length > 80 %}...{% endif %}
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                {{ post.summary[:150]|striptags }}{% if post.summary|length > 150 %}...{% endif %}
+                            </p>
+                            <div class="blog-actions">
+                                <a href="{{ post.link }}" target="_blank" rel="noopener noreferrer" class="read-more">
+                                    Read Article <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="blog-card placeholder">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech News">
+                            <div class="blog-category">Tech News</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="fas fa-calendar-alt"></i> Recent</span>
+                                <span class="blog-source"><i class="fas fa-external-link-alt"></i> TechCrunch</span>
+                            </div>
+                            <h3 class="blog-title">Latest Technology Trends and Insights</h3>
+                            <p class="blog-excerpt">Stay informed about the latest developments in technology, software development, and digital transformation.</p>
+                            <div class="blog-actions">
+                                <a href="{{ url_for('rss') }}" class="read-more">
+                                    View All Articles <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="section-footer">
+                <div class="blog-cta">
+                    <h3>Want to read more?</h3>
+                    <p>Explore our complete collection of technology articles and insights</p>
+                    <a href="{{ url_for('rss') }}" class="primary-button">
+                        View All Articles <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                    <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="CalmnClassy Dev">
+                    <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                    Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="{{ url_for('rss') }}"><i class="fas fa-chevron-right"></i> Latest Articles</a></li>
+                    <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('services') }}#web-dev"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li><a href="{{ url_for('services') }}#cloud"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                    <li><a href="{{ url_for('services') }}#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                    <li><a href="{{ url_for('services') }}#consulting"><i class="fas fa-chevron-right"></i> IT Consulting</a></li>
+                    <li><a href="{{ url_for('services') }}#support"><i class="fas fa-chevron-right"></i> 24/7 Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('rss') }}"><i class="fas fa-chevron-right"></i> Latest Articles</a></li>
+                    <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                    <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                    <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                    Subscribe to our newsletter for the latest tech insights and company updates.
+                    </p>
+                    <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    </form>
+                    <div class="trust-badges">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5-jxJCmpyrtequRD3rlour8pNHeK5z86Ckg&s" alt="ISO Certified">
+                    <img src="data:image/jpeg;base64,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" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> CalmnClassy Dev. All rights reserved.
+                    <script>
+                        document.getElementById('year').textContent = new Date().getFullYear();
+                    </script>
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

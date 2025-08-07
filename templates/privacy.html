@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                    <a href="{{ url_for('services') }}" class="nav-link">
+                        <i class="fas fa-cubes"></i> Services
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url_for('solutions') }}" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Solutions
+                    </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Hero Section -->
+    <section class="privacy-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Privacy <span class="text-gradient">Policy</span></h1>
+                <p class="hero-subtitle">Last updated: June 15, 2023</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="secondary-button">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Privacy Policy" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content Section -->
+    <section class="privacy-section">
+        <div class="section-container">
+            <div class="legal-content">
+                <p>CalmnClassy Dev ("us", "we", or "our") operates the https://www.calmnclassy.dev website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+                
+                <h2>Information Collection And Use</h2>
+                <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+                
+                <h3>Types of Data Collected</h3>
+                
+                <h4>Personal Data</h4>
+                <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+                <ul>
+                    <li>Email address</li>
+                    <li>First name and last name</li>
+                    <li>Phone number</li>
+                    <li>Cookies and Usage Data</li>
+                </ul>
+                
+                <h4>Usage Data</h4>
+                <p>We may also collect information how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+                
+                <h4>Tracking & Cookies Data</h4>
+                <p>We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.</p>
+                <p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.</p>
+                <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+                
+                <h2>Use of Data</h2>
+                <p>CalmnClassy Dev uses the collected data for various purposes:</p>
+                <ul>
+                    <li>To provide and maintain the Service</li>
+                    <li>To notify you about changes to our Service</li>
+                    <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
+                    <li>To provide customer care and support</li>
+                    <li>To provide analysis or valuable information so that we can improve the Service</li>
+                    <li>To monitor the usage of the Service</li>
+                    <li>To detect, prevent and address technical issues</li>
+                </ul>
+                
+                <h2>Transfer Of Data</h2>
+                <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
+                <p>If you are located outside Kenya and choose to provide information to us, please note that we transfer the data, including Personal Data, to Kenya and process it there.</p>
+                <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+                <p>CalmnClassy Dev will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+                
+                <h2>Disclosure Of Data</h2>
+                <h3>Legal Requirements</h3>
+                <p>CalmnClassy Dev may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
+                <ul>
+                    <li>To comply with a legal obligation</li>
+                    <li>To protect and defend the rights or property of CalmnClassy Dev</li>
+                    <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
+                    <li>To protect the personal safety of users of the Service or the public</li>
+                    <li>To protect against legal liability</li>
+                </ul>
+                
+                <h2>Security Of Data</h2>
+                <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+                
+                <h2>Service Providers</h2>
+                <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
+                <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+                
+                <h2>Links To Other Sites</h2>
+                <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+                <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+                
+                <h2>Children's Privacy</h2>
+                <p>Our Service does not address anyone under the age of 18 ("Children").</p>
+                <p>We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+                
+                <h2>Changes To This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+                <p>We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                
+                <h2 id="contact">Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li>By email: privacy@calmnclassy.dev</li>
+                    <li>By visiting this page on our website: <a href="{{ url_for('contact') }}">Contact Us</a></li>
+                    <li>By phone: +254 700 000000</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('services') }}#web-dev"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li><a href="{{ url_for('services') }}#cloud"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                    <li><a href="{{ url_for('services') }}#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                    <li><a href="{{ url_for('services') }}#consulting"><i class="fas fa-chevron-right"></i> IT Consulting</a></li>
+                    <li><a href="{{ url_for('services') }}#support"><i class="fas fa-chevron-right"></i> 24/7 Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                    <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                    <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for the latest updates and news.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

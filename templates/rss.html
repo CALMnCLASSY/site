@@ -4,85 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSS Feed - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
-<body>
-    <header>
-        <header>
-            <nav>
-              <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('services') }}">Services</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-              </ul>
-            </nav>
-            <div class="header-content">
-              <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-              <div class="header-text">
-        <h1>Latest Articles</h1>
-        <p>Stay updated with the latest articles from TechCrunch.</p>
-        <button id="darkModeToggle">🌓</button>
-<script>
-  const toggle = document.getElementById('darkModeToggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-  });
 
-  // Load saved preference
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CALMnCLASSY" class="header-logo">
+                <span class="company-name">CALMnCLASSY</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('solutions') }}" class="nav-link">
+                            <i class="fas fa-lightbulb"></i> Solutions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
-    <section id="rss">
-        <ul>
-            {% for entry in feed %}
-            <li>
-                <a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a>
-                <p>{{ entry.summary }}</p>
-                <p><small>Published on: {{ entry.published }}</small></p>
-            </li>
-            {% endfor %}
-        </ul>
+    <!-- RSS Hero Section -->
+    <section class="rss-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">RSS <span class="text-gradient">Feed</span></h1>
+                <p class="hero-subtitle">Stay updated with the latest tech articles and industry insights</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSS Content Section -->
+    <section class="blog-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="text-gradient">Articles</span></h2>
+                <p class="section-description">Stay informed with the latest technology news and industry insights</p>
+            </div>
+            
+            <div class="blog-grid">
+                {% if feed %}
+                    {% for entry in feed %}
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <h3 class="blog-title">
+                                <a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer">
+                                    {{ entry.title }}
+                                </a>
+                            </h3>
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ entry.published if entry.published else 'No date' }}
+                                </span>
+                                <span class="blog-source">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    External Source
+                                </span>
+                            </div>
+                            <p class="blog-excerpt">
+                                {{ entry.summary|striptags|truncate(200) if entry.summary else 'No summary available.' }}
+                            </p>
+                            <a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer" class="blog-read-more">
+                                Read Full Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-articles">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>No articles available</h3>
+                        <p>We're having trouble loading the latest articles. Please check back later.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ entry.published if entry.published else 'Recent' }}
+                                </span>
+                                <span class="blog-category">
+                                    <i class="fas fa-tag"></i>
+                                    Tech News
+                                </span>
+                            </div>
+                            <h3 class="blog-title">
+                                <a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer">
+                                    {{ entry.title }}
+                                </a>
+                            </h3>
+                            <p class="blog-excerpt">
+                                {{ entry.summary|striptags|truncate(150) if entry.summary else 'Click to read the full article...' }}
+                            </p>
+                            <div class="blog-footer">
+                                <a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer" class="read-more">
+                                    Read Full Article <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="no-articles">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>No articles available</h3>
+                        <p>We're working on bringing you the latest tech news. Please check back later.</p>
+                    </div>
+                {% endif %}
+            </div>
+            
+            {% if feed and feed|length > 6 %}
+            <div class="section-footer">
+                <p class="load-more-info">Showing latest articles. Refresh the page for more recent updates.</p>
+            </div>
+            {% endif %}
+        </div>
     </section>
     <footer>
-        <div class="footer-container">
-            <!-- Left Section: Favicon and Links -->
-            <div class="footer-left">
-                <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
-                <div class="footer-links-container">
-                    <ul class="footer-links">
-                        <li><a href="{{ url_for('services') }}">Services</a></li>
-                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('blog') }}">Blogs</a></li>
-                    </ul>
-            </div>
-    
-            <!-- Center Section: Paragraph Text -->
-            <div class="footer-center">
-                <p>Crafting digital excellence with a touch of class.</p>
-            </div>
-    
-            <!-- Right Section: Social Icons -->
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
-        </div>
-    </footer>
+      <div class="footer-container">
+          <!-- Left Section: Favicon and Navigation Links -->
+          <div class="footer-left">
+              <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
+              <div class="footer-links-container">
+                  <ul class="footer-links">
+                      <li><a href="{{ url_for('home') }}">Quick Links</a></li>
+                      <li><a href="{{ url_for('about') }}">Explore CnC</a></li>
+                  </ul>
+                  <ul class="footer-links">
+                      <li><a href="{{ url_for('services') }}">What we do</a></li>
+                      <li><a href="{{ url_for('contact') }}">Talk to Us</a></li>
+                      <li><a href="{{ url_for('blog') }}">Blogs</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- Center Section: Paragraph Text -->
+          <div class="footer-center">
+              <p>Crafting digital excellence with a touch of class.</p>
+          </div>
+
+          <!-- Right Section: Social Icons -->
+          <div class="footer-right">
+              <div class="social-icons">
+                  <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="footer-bottom">
+          <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+      </div>
+  </footer>
     
     
     <button id="back-to-top" title="Go to top">↑</button>

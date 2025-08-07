@@ -4,137 +4,537 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Dynamic gradient animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-          <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('services') }}">Services</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="header-content">
-          <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-          <div class="header-text">
-                <h1>About Us</h1>
-                <p>Learn more about CalmnClassy Dev and how we can help your business thrive in the digital age.</p>
-            </div>
-        </div>
-        <button id="darkModeToggle">🌓</button>
-<script>
-  const toggle = document.getElementById('darkModeToggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-  });
 
-  // Load saved preference
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CALMnCLASSY" class="header-logo">
+                <span class="company-name">CALMnCLASSY</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                    <a href="{{ url_for('services') }}" class="nav-link">
+                        <i class="fas fa-cubes"></i> Services
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url_for('solutions') }}" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Solutions
+                    </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
-    <section id="about">
-        <div class="heading-icon"><i class="fas fa-info-circle"></i></div>
-        <h2>About CalmnClassy Dev</h2>
-        <p>CalmnClassy Dev is a premier IT support company dedicated to delivering top-notch tech services with a touch of sophistication. Based in [Your Location], we specialize in creating stunning websites, providing robust IT support, and offering strategic consulting to businesses of all sizes.</p>
-        <p>Our team of experienced professionals is committed to delivering high-quality solutions tailored to meet the unique needs of our clients. We work with a diverse range of companies and industries, helping them navigate the complexities of technology with confidence and style.</p>
-
-        <div class="heading-icon"><i class="fas fa-bullseye"></i></div>
-        <h3>Our Mission</h3>
-        <p>Our mission is to provide reliable, efficient, and elegant IT solutions that empower your organization to thrive in the digital age. We believe in building long-term relationships with our clients, based on trust, transparency, and mutual success.</p>
-
-        <div class="heading-icon"><i class="fas fa-briefcase"></i></div>
-        <h3>Our Services</h3>
-        <p>From web development to IT consulting, cybersecurity to cloud computing, we offer a comprehensive range of services designed to meet the evolving needs of modern businesses.</p>
-
-        <div class="heading-icon"><i class="fas fa-handshake"></i></div>
-        <h3>Partnering with Businesses</h3>
-        <p>We pride ourselves on our ability to collaborate with businesses of all sizes, providing personalized solutions that drive growth and innovation. Our client portfolio includes startups, small businesses, and large enterprises, each benefiting from our expertise and commitment to excellence.</p>
-
-        <div class="heading-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Contact Us</h3>
-        <p>Located in East Africa,Nairobi , we are always here to support your business needs. Reach out to us at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 745 087 451.</p>
-    </section>
-    <section id="blog-preview">
-        <div class="heading-icon"><i class="fas fa-newspaper"></i></div>
-        <h2>Blog Updates</h2>
-        <div class="blog-preview-posts">
-            {% if feed %}
-                {% for post in feed %}
-                <div class="blog-preview-item">
-                    <h3><a href="{{ url_for('blog') }}#{{ post.id }}">{{ post.title }}</a></h3>
-                    <p>{{ post.summary|truncate(150)|safe }}</p>
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">About <span class="text-gradient">CnC Dev</span></h1>
+                <p class="hero-subtitle">Crafting digital excellence with a touch of class since 2020</p>
+                <div class="hero-buttons">
+                    <a href="#our-team" class="primary-button">
+                        Meet Our Team <i class="fas fa-arrow-down"></i>
+                    </a>
                 </div>
-                {% endfor %}
-            {% else %}
-                <p>No blog posts available at the moment. Please check back later.</p>
-            {% endif %}
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="hero-img">
+            </div>
         </div>
-        <a href="{{ url_for('blog') }}" class="see-all">See All Articles →</a>
     </section>
-    <section id="blog">
-        <a href="{{ url_for('rss') }}"><img src="static/images.png"> Latest Articles</a></li>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Our <span class="text-gradient">Story</span></h2>
+                    <p>Founded in 2020, CalmnClassy Dev began as a small team of passionate technologists with a shared vision: to deliver sophisticated digital solutions that combine technical excellence with elegant design.</p>
+                    <p>What started as a boutique web development studio in Nairobi has grown into a full-service technology firm serving clients across East Africa and beyond. Our commitment to quality and attention to detail has earned us recognition as a trusted partner for businesses of all sizes.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="50">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="247">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="15">0</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-count="5">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Office">
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="cta">
-        <div class="heading-icon"><i class="fas fa-bullhorn"></i></div>
-        <h2>Get Started with CalmnClassy Dev</h2>
-        <p>Ready to take your business to the next level? Contact us today for a free consultation!</p>
-        <button onclick="window.location.href='{{ url_for('contact') }}'">Contact Us</button>
+
+    <!-- Mission & Values Section -->
+    <section class="values-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Values</span></h2>
+                <p class="section-description">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We pursue perfection in every project, delivering solutions that exceed expectations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We embrace new technologies and creative approaches to solve complex problems.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We build trust through transparency, honesty, and ethical business practices.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We work closely with clients to understand their unique needs and goals.</p>
+                </div>
+            </div>
+        </div>
     </section>
- 
-    <footer>
+
+    <!-- Team Section -->
+    <section id="our-team" class="team-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our <span class="text-gradient">Team</span></h2>
+                <p class="section-description">The talented professionals behind CalmnClassy Dev</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Leadership -->
+                <div class="team-member leadership">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/john-doe.jpg') }}" alt="John Doe">
+                        <div class="member-badge">Founder & CEO</div>
+                    </div>
+                    <h3>John Doe</h3>
+                    <p class="member-title">Founder & CEO</p>
+                    <p class="member-bio">With over 15 years in the tech industry, John leads our strategic vision and ensures we deliver exceptional value to our clients.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member leadership">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/jane-smith.jpg') }}" alt="Jane Smith">
+                        <div class="member-badge">CTO</div>
+                    </div>
+                    <h3>Jane Smith</h3>
+                    <p class="member-title">Chief Technology Officer</p>
+                    <p class="member-bio">Jane oversees our technical strategy with expertise in cloud architecture and scalable systems design.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Development Team -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/michael-ngugi.jpg') }}" alt="Michael Ngugi">
+                        <div class="member-badge">Senior Developer</div>
+                    </div>
+                    <h3>Michael Ngugi</h3>
+                    <p class="member-title">Senior Full-Stack Developer</p>
+                    <p class="member-bio">Specializing in React and Node.js, Michael builds robust web applications for our clients.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/sarah-juma.jpg') }}" alt="Sarah Juma">
+                        <div class="member-badge">UI/UX Designer</div>
+                    </div>
+                    <h3>Sarah Juma</h3>
+                    <p class="member-title">Lead UI/UX Designer</p>
+                    <p class="member-bio">Sarah creates intuitive, beautiful interfaces that enhance user experience and drive engagement.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/david-owino.jpg') }}" alt="David Owino">
+                        <div class="member-badge">DevOps Engineer</div>
+                    </div>
+                    <h3>David Owino</h3>
+                    <p class="member-title">DevOps Engineer</p>
+                    <p class="member-bio">David ensures our deployments are seamless and our infrastructure is rock-solid.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="{{ url_for('static', filename='team/grace-mwangi.jpg') }}" alt="Grace Mwangi">
+                        <div class="member-badge">Security Specialist</div>
+                    </div>
+                    <h3>Grace Mwangi</h3>
+                    <p class="member-title">Cybersecurity Specialist</p>
+                    <p class="member-bio">Grace protects our clients' digital assets with cutting-edge security solutions.</p>
+                    <div class="member-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- View All Team Button -->
+                <div class="view-all-team">
+                    <a href="{{ url_for('team') }}" class="primary-button">
+                        View Full Team <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Process</span></h2>
+                <p class="section-description">How we deliver exceptional results for our clients</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We start by thoroughly understanding your business needs, goals, and challenges through in-depth consultations.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>Our team creates a detailed project plan with milestones, deliverables, and a clear roadmap for success.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Design</h3>
+                        <p>We craft intuitive user experiences and beautiful interfaces that align with your brand identity.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Development</h3>
+                        <p>Our developers build robust, scalable solutions using the latest technologies and best practices.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Testing</h3>
+                        <p>We rigorously test every aspect of the solution to ensure quality, performance, and security.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Deployment</h3>
+                        <p>We seamlessly launch your solution and provide comprehensive training and documentation.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>Support</h3>
+                        <p>Our team provides ongoing maintenance, updates, and support to ensure long-term success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="blog-preview-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">From Our <span class="text-gradient">Blog</span></h2>
+                <p class="section-description">Insights, trends, and company updates</p>
+            </div>
+            
+            <div class="blog-preview-grid">
+                {% if feed %}
+                    {% for post in feed[:3] %}
+                    <div class="blog-preview-card">
+                        <div class="blog-preview-image">
+                            <img src="{{ post.image if post.image else url_for('static', filename='blog-default.jpg') }}" alt="{{ post.title }}">
+                        </div>
+                        <div class="blog-preview-content">
+                            <h3><a href="{{ url_for('blog') }}#{{ post.id }}">{{ post.title }}</a></h3>
+                            <p class="blog-excerpt">{{ post.summary|truncate(150)|safe }}</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">{{ post.date }}</span>
+                                <a href="{{ url_for('blog') }}#{{ post.id }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-posts">No blog posts available at the moment. Please check back later.</p>
+                {% endif %}
+            </div>
+            
+            <div class="section-footer">
+                <a href="{{ url_for('blog') }}" class="primary-button">
+                    View All Articles <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Work With Us?</h2>
+                <p>Let's discuss how we can help your business achieve its technology goals.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="primary-button">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+254745087451" class="secondary-button">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="site-footer">
         <div class="footer-container">
-            <!-- Left Section: Favicon and Links -->
-            <div class="footer-left">
-                <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
-                <div class="footer-links-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                    <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="CalmnClassy Dev">
+                    <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                    Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="{{ url_for('services') }}">Services</a></li>
-                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('blog') }}">Blogs</a></li>
+                    <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
-            </div>
-    
-            <!-- Center Section: Paragraph Text -->
-            <div class="footer-center">
-                <p>Crafting digital excellence with a touch of class.</p>
-            </div>
-    
-            <!-- Right Section: Social Icons -->
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('services') }}#web-dev"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    <li><a href="{{ url_for('services') }}#cloud"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                    <li><a href="{{ url_for('services') }}#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                    <li><a href="{{ url_for('services') }}#consulting"><i class="fas fa-chevron-right"></i> IT Consulting</a></li>
+                    <li><a href="{{ url_for('services') }}#support"><i class="fas fa-chevron-right"></i> 24/7 Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                    <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                    <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                    Subscribe to our newsletter for the latest tech insights and company updates.
+                    </p>
+                    <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    </form>
+                    <div class="trust-badges">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5-jxJCmpyrtequRD3rlour8pNHeK5z86Ckg&s" alt="ISO Certified">
+                    <img src="data:image/jpeg;base64,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" alt="GDPR Compliant">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> CalmnClassy Dev. All rights reserved.
+                    <script>
+                        document.getElementById('year').textContent = new Date().getFullYear();
+                    </script>
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
     
-    <button id="back-to-top" title="Go to top">↑</button>
-<script>
-  window.onscroll = function() {
-    const btn = document.getElementById('back-to-top');
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
-  };
-  document.getElementById('back-to-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Animated counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-value');
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const speed = 50; // Animation duration in frames
+                const increment = target / speed;
+                let count = 0;
+                
+                const updateCount = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+        
+        // Trigger animation when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(animateCounters, 500); // Small delay for better effect
+        });
+
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitepapers - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('solutions') }}" class="nav-link">
+                            <i class="fas fa-lightbulb"></i> Solutions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Whitepapers Hero Section -->
+    <section class="whitepapers-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Expert <span class="text-gradient">Whitepapers</span></h1>
+                <p class="hero-subtitle">In-depth research and insights on technology trends and best practices</p>
+                <div class="hero-buttons">
+                    <a href="#featured-whitepapers" class="primary-button">
+                        Browse Whitepapers <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="#download" class="secondary-button">
+                        <i class="fas fa-download"></i> Download All
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Whitepapers" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Whitepapers Section -->
+    <section id="featured-whitepapers" class="whitepapers-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="text-gradient">Whitepapers</span></h2>
+                <p class="section-description">Our most popular technical research documents</p>
+            </div>
+            
+            <div class="whitepapers-grid">
+                <!-- Whitepaper 1 -->
+                <div class="whitepaper-card">
+                    <div class="whitepaper-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cloud Strategy">
+                        <div class="whitepaper-badge">Cloud Computing</div>
+                    </div>
+                    <div class="whitepaper-content">
+                        <h3>Enterprise Cloud Migration Strategy</h3>
+                        <div class="whitepaper-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 2023</span>
+                            <span><i class="fas fa-user"></i> Wanjiru Kariuki</span>
+                        </div>
+                        <p>A comprehensive guide to planning and executing a successful cloud migration for large organizations.</p>
+                        <div class="whitepaper-footer">
+                            <a href="#" class="secondary-button">
+                                Download PDF <i class="fas fa-download"></i>
+                            </a>
+                            <span class="file-size">2.4 MB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Whitepaper 2 -->
+                <div class="whitepaper-card">
+                    <div class="whitepaper-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security">
+                        <div class="whitepaper-badge">Cybersecurity</div>
+                    </div>
+                    <div class="whitepaper-content">
+                        <h3>Zero Trust Security Framework</h3>
+                        <div class="whitepaper-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 2023</span>
+                            <span><i class="fas fa-user"></i> Ian Kipchirchir</span>
+                        </div>
+                        <p>Implementing Zero Trust principles to protect modern distributed work environments.</p>
+                        <div class="whitepaper-footer">
+                            <a href="#" class="secondary-button">
+                                Download PDF <i class="fas fa-download"></i>
+                            </a>
+                            <span class="file-size">1.8 MB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Whitepaper 3 -->
+                <div class="whitepaper-card">
+                    <div class="whitepaper-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="AI">
+                        <div class="whitepaper-badge">Artificial Intelligence</div>
+                    </div>
+                    <div class="whitepaper-content">
+                        <h3>Practical AI for Business</h3>
+                        <div class="whitepaper-meta">
+                            <span><i class="far fa-calendar-alt"></i> March 2023</span>
+                            <span><i class="fas fa-user"></i> Jane Smith</span>
+                        </div>
+                        <p>Real-world applications of artificial intelligence that deliver measurable business value.</p>
+                        <div class="whitepaper-footer">
+                            <a href="#" class="secondary-button">
+                                Download PDF <i class="fas fa-download"></i>
+                            </a>
+                            <span class="file-size">2.1 MB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whitepaper Categories Section -->
+    <section class="categories-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Whitepaper <span class="text-gradient">Categories</span></h2>
+                <p class="section-description">Explore our research by topic</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>Migration strategies, architecture patterns, and cost optimization.</p>
+                    <span class="count">8 whitepapers</span>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Threat protection, compliance, and security frameworks.</p>
+                    <span class="count">6 whitepapers</span>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & ML</h3>
+                    <p>Practical applications of artificial intelligence.</p>
+                    <span class="count">5 whitepapers</span>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Business intelligence and data-driven decision making.</p>
+                    <span class="count">4 whitepapers</span>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Development</h3>
+                    <p>Modern frameworks, methodologies, and best practices.</p>
+                    <span class="count">7 whitepapers</span>
+                </a>
+                
+                <a href="#" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>IT Infrastructure</h3>
+                    <p>Modernizing and optimizing enterprise IT systems.</p>
+                    <span class="count">3 whitepapers</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="section-container">
+            <div class="download-container">
+                <div class="download-content">
+                    <h2 class="section-title">Download <span class="text-gradient">Whitepapers</span></h2>
+                    <p>Get access to our complete library of technical whitepapers by filling out the form.</p>
+                    
+                    <div class="download-benefits">
+                        <h3>Why Download Our Whitepapers?</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Research-backed insights</li>
+                            <li><i class="fas fa-check-circle"></i> Practical implementation guides</li>
+                            <li><i class="fas fa-check-circle"></i> Written by industry experts</li>
+                            <li><i class="fas fa-check-circle"></i> Free access to all documents</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <form class="download-form">
+                    <div class="form-group">
+                        <label for="dl-name">Full Name *</label>
+                        <input type="text" id="dl-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dl-email">Email Address *</label>
+                        <input type="email" id="dl-email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dl-company">Company/Organization *</label>
+                        <input type="text" id="dl-company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dl-role">Job Role *</label>
+                        <input type="text" id="dl-role" name="role" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dl-interests">Topics of Interest (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="interests" value="cloud"> Cloud Computing</label>
+                            <label><input type="checkbox" name="interests" value="security"> Cybersecurity</label>
+                            <label><input type="checkbox" name="interests" value="ai"> AI & Machine Learning</label>
+                            <label><input type="checkbox" name="interests" value="data"> Data Analytics</label>
+                            <label><input type="checkbox" name="interests" value="dev"> Software Development</label>
+                            <label><input type="checkbox" name="interests" value="infra"> IT Infrastructure</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="subscribe" checked> Subscribe to our newsletter
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="primary-button">
+                        Download Whitepapers <i class="fas fa-download"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Whitepapers Section -->
+    <section class="latest-whitepapers bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Latest <span class="text-gradient">Whitepapers</span></h2>
+                <p class="section-description">Our most recent technical research publications</p>
+            </div>
+            
+            <div class="latest-whitepapers-grid">
+                <!-- Latest Whitepaper 1 -->
+                <div class="latest-whitepaper-card">
+                    <div class="whitepaper-date">JUN 2023</div>
+                    <h3>DevOps Best Practices for Enterprise</h3>
+                    <p>Implementing CI/CD pipelines and automation at scale.</p>
+                    <a href="#" class="secondary-button">
+                        Download <i class="fas fa-download"></i>
+                    </a>
+                </div>
+                
+                <!-- Latest Whitepaper 2 -->
+                <div class="latest-whitepaper-card">
+                    <div class="whitepaper-date">MAY 2023</div>
+                    <h3>Hybrid Cloud Architecture</h3>
+                    <p>Design patterns for combining public and private cloud.</p>
+                    <a href="#" class="secondary-button">
+                        Download <i class="fas fa-download"></i>
+                    </a>
+                </div>
+                
+                <!-- Latest Whitepaper 3 -->
+                <div class="latest-whitepaper-card">
+                    <div class="whitepaper-date">APR 2023</div>
+                    <h3>React Performance Optimization</h3>
+                    <p>Advanced techniques for faster React applications.</p>
+                    <a href="#" class="secondary-button">
+                        Download <i class="fas fa-download"></i>
+                    </a>
+                </div>
+                
+                <!-- Latest Whitepaper 4 -->
+                <div class="latest-whitepaper-card">
+                    <div class="whitepaper-date">MAR 2023</div>
+                    <h3>GDPR Compliance Guide</h3>
+                    <p>Ensuring your systems meet data protection requirements.</p>
+                    <a href="#" class="secondary-button">
+                        Download <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="#" class="primary-button">
+                    View All Whitepapers <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                        <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Research Updates</h3>
+                    <p class="newsletter-text">
+                        Get notified when we publish new whitepapers and research.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Download form handling
+        document.querySelector('.download-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            submitButton.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'form-success';
+                successMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank You!</h3>
+                    <p>Your whitepapers are ready to download. Check your email for the download link.</p>
+                    <a href="#" class="primary-button">
+                        Download Now <i class="fas fa-download"></i>
+                    </a>
+                `;
+                this.parentNode.insertBefore(successMessage, this.nextSibling);
+                
+                // Reset form
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        });
+
+        // Whitepaper card hover effects
+        document.querySelectorAll('.whitepaper-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('.whitepaper-image img');
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('.whitepaper-image img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

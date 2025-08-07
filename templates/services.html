@@ -4,149 +4,684 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles for the new detailed services section */
+        .service-category {
+            margin-bottom: 4rem;
+        }
+        .service-category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fff;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color, #10b981);
+        }
+        .service-category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .detailed-service-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .detailed-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .detailed-service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .detailed-service-icon {
+            font-size: 2rem;
+            color: var(--primary-color, #10b981);
+            margin-right: 1rem;
+            width: 50px;
+            text-align: center;
+        }
+        .detailed-service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+        .detailed-service-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ccc;
+            flex-grow: 1;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-          <ul>
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('services') }}">Services</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="header-content">
-          <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-          <div class="header-text">
-                <h1>Our Services</h1>
-                <p>Discover the range of services we offer to help your business thrive in the digital age.</p>
+<body class="dark-mode">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('home') }}" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link active">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('solutions') }}" class="nav-link">
+                            <i class="fas fa-lightbulb"></i> Solutions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
+            
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <button id="darkModeToggle">🌓</button>
-<script>
-  const toggle = document.getElementById('darkModeToggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-  });
-
-  // Load saved preference
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-</script>
     </header>
 
-    <section id="services">
-        <div class="service">
-            <i class="fas fa-laptop-code"></i>
-            <p><strong>Custom Software Development & Design:</strong> We design and develop mobile, web, and desktop applications tailored to your specific business needs.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>ICT Services:</strong> Our team provides expertise in information systems to help you implement the right technology for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-search"></i>
-            <p><strong>SEO Optimization:</strong> Improve your website's visibility and ranking.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cogs"></i>
-            <p><strong>IT Consulting Solutions:</strong> Get expert advice on the best technology solutions for your business, including web services, SEO, and database design.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-lock"></i>
-            <p><strong>Cybersecurity & IT Security Solutions:</strong> Protect your business with our comprehensive security solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cloud"></i>
-            <p><strong>Cloud Computing and Hosting:</strong> Seamless cloud integration and management services provide off-premise solutions for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-server"></i>
-            <p><strong>SaaS (Software as a Service):</strong> Our SaaS solutions provide easy access to software and services from anywhere, anytime.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-database"></i>
-            <p><strong>Data Management:</strong> We provide servers and data management solutions to ensure your data is secure and accessible. Manage your customer interactions and relationships with our CRM solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>Computer Networking:</strong> Our network infrastructure services help optimize your network performance and increase efficiency.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-shopping-cart"></i>
-            <p><strong>Software & Hardware Procurement:</strong> Find the right technology solutions for your business with our software and hardware procurement services. Streamline your business processes with our productivity tools and solutions.</p>
-        </div>
-    </section>
-    <section id="portfolio">
-        <div class="heading-icon"><i class="fas fa-briefcase"></i></div>
-        <h2>Our Portfolio</h2>
-        <div class="project-container">
-            <div class="project">
-                <h3> E-Commerce Platform for Fashion Bug Retail Companies LLC</h3>
-                <p>Client: Fashion Bug Retail Companies LLC Overview: CalmnClassy Dev designed and developed a state-of-the-art e-commerce platform for our company. The platform included user-friendly navigation, secure payment gateways, and an advanced inventory management system. Impact: The new e-commerce platform resulted in a 40% increase in online sales and improved customer satisfaction.</p>
+    <section class="services-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Our <span class="text-gradient">Services</span></h1>
+                <p class="hero-subtitle">Comprehensive technology solutions designed to drive your business forward</p>
+                <div class="hero-buttons">
+                    <a href="#all-services" class="primary-button">
+                        Explore All Services <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="secondary-button">
+                        <i class="fas fa-phone-alt"></i> Get a Consultation
+                    </a>
+                </div>
             </div>
-            <div class="project">
-                <h3> Custom CRM Solution for ImaliPay</h3>
-                <p>Client: ImaliPay Ltd. Overview: We developed a custom Customer Relationship Management (CRM) solution for ImaliPay Ltd. The CRM system streamlined their client management processes, enhanced data security, and provided detailed analytics and reporting. Impact: The CRM solution improved client engagement and increased the firm's operational efficiency by 30%.</p>
-            </div>
-            <div class="project">
-                <h3> Cybersecurity Implementation for Ohospital Cloud</h3>
-                <p>Client: Ohospital Cloud Overview: CalmnClassy Dev implemented a comprehensive cybersecurity solution for Ohospital Cloud. This included setting up firewalls, encrypting sensitive patient data, and conducting regular security audits. Impact: The healthcare provider experienced zero data breaches and improved compliance with industry regulations, ensuring the safety and privacy of patient information.</p>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Technology Services" class="hero-img">
             </div>
         </div>
     </section>
-    <footer>
-        <div class="footer-container">
-            <!-- Left Section: Favicon and Links -->
-            <div class="footer-left">
-                <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
-                <div class="footer-links-container">
-                    <ul class="footer-links">
-                        <li><a href="{{ url_for('services') }}">Services</a></li>
-                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('blog') }}">Blogs</a></li>
-                    </ul>
+
+    <section id="all-services" class="services-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Expertise</span></h2>
+                <p class="section-description">We deliver cutting-edge solutions tailored to your business needs across five key areas.</p>
             </div>
-    
-            <!-- Center Section: Paragraph Text -->
-            <div class="footer-center">
-                <p>Crafting digital excellence with a touch of class.</p>
+
+            <div class="service-category">
+                <h3 class="service-category-title"><span class="text-gradient">I.</span> Software Development</h3>
+                <div class="service-category-grid">
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-laptop-code detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Custom Software Development</h4>
+                        </div>
+                        <p class="detailed-service-description">Designing, building, and deploying bespoke software applications tailored to your specific business needs and operational workflows, including ERPs and specialized data processing tools.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-globe detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Web Application Development</h4>
+                        </div>
+                        <p class="detailed-service-description">Creating powerful, responsive, and secure web-based applications using modern front-end (React, Angular) and back-end (Node.js, Python/Django) technologies.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-mobile-alt detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Mobile Application Development</h4>
+                        </div>
+                        <p class="detailed-service-description">Building native (iOS/Android) and cross-platform (Flutter, React Native) mobile apps to enhance customer engagement and provide powerful business mobility solutions.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-paint-brush detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">UI/UX Design</h4>
+                        </div>
+                        <p class="detailed-service-description">Crafting intuitive, accessible, and engaging user interfaces (UI) and user experiences (UX) through wireframing, prototyping, and rigorous user testing to ensure software is a joy to use.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-sync-alt detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Legacy System Modernization</h4>
+                        </div>
+                        <p class="detailed-service-description">Upgrading your outdated software to modern, efficient, and secure technology stacks to improve performance, reduce operational risk, and unlock new capabilities.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-plug detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">API Development & Integration</h4>
+                        </div>
+                        <p class="detailed-service-description">Creating and integrating custom APIs to enable seamless data exchange and functionality between your different software systems, both internal and third-party.</p>
+                    </div>
+                </div>
             </div>
-    
-            <!-- Right Section: Social Icons -->
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <div class="service-category">
+                <h3 class="service-category-title"><span class="text-gradient">II.</span> IT Support & Managed Services</h3>
+                <div class="service-category-grid">
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-tasks detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Managed IT Services</h4>
+                        </div>
+                        <p class="detailed-service-description">Proactive, comprehensive IT management for a flat monthly fee. We handle network monitoring, system maintenance, and performance optimization to prevent issues before they occur.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-headset detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">24/7 Help Desk Support</h4>
+                        </div>
+                        <p class="detailed-service-description">Offering round-the-clock remote and on-site support to resolve technical issues for your employees, covering hardware, software, and network problems swiftly and efficiently.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-network-wired detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Network Infrastructure Management</h4>
+                        </div>
+                        <p class="detailed-service-description">Designing, installing, and managing secure and reliable local (LAN), wide area (WAN), and wireless (Wi-Fi) networks to ensure seamless connectivity for your business operations.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-hdd detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Hardware Procurement & Management</h4>
+                        </div>
+                        <p class="detailed-service-description">Assisting with the selection, procurement, setup, and lifecycle management of all IT hardware, including servers, desktops, laptops, and networking equipment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <h3 class="service-category-title"><span class="text-gradient">III.</span> Cloud Services</h3>
+                <div class="service-category-grid">
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-cloud-upload-alt detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Cloud Migration & Integration</h4>
+                        </div>
+                        <p class="detailed-service-description">Seamlessly migrating your on-premise applications, data, and infrastructure to leading cloud platforms like AWS, Microsoft Azure, or Google Cloud Platform (GCP).</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-cloud detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Cloud Hosting & Management</h4>
+                        </div>
+                        <p class="detailed-service-description">Managing your cloud infrastructure to ensure high availability, scalability, and cost-efficiency. This includes managing VMs, containers (Docker, Kubernetes), and serverless computing.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fab fa-microsoft detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Microsoft 365 & Google Workspace</h4>
+                        </div>
+                        <p class="detailed-service-description">Expert setup, migration, and ongoing management of business productivity suites, including email, collaboration tools, security policies, and cloud storage solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <h3 class="service-category-title"><span class="text-gradient">IV.</span> Cybersecurity Services</h3>
+                <div class="service-category-grid">
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-shield-alt detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Cybersecurity Assessment & Auditing</h4>
+                        </div>
+                        <p class="detailed-service-description">Conducting thorough security audits and vulnerability assessments of your IT infrastructure and applications to identify, report, and mitigate potential threats.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-user-shield detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Managed Security Services</h4>
+                        </div>
+                        <p class="detailed-service-description">Providing continuous security monitoring, threat detection, and incident response. Includes managed firewalls, antivirus, endpoint protection, and SIEM solutions.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-database detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Data Backup & Disaster Recovery</h4>
+                        </div>
+                        <p class="detailed-service-description">Implementing robust data backup solutions and creating comprehensive disaster recovery plans to ensure business continuity in the event of data loss, failure, or a cyberattack.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-chalkboard-teacher detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Employee Security Training</h4>
+                        </div>
+                        <p class="detailed-service-description">Offering engaging training programs to educate your employees on cybersecurity best practices, helping to prevent common security breaches caused by human error.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-category">
+                <h3 class="service-category-title"><span class="text-gradient">V.</span> IT Consulting & Strategy</h3>
+                <div class="service-category-grid">
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-sitemap detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">IT Strategy & Roadmap Development</h4>
+                        </div>
+                        <p class="detailed-service-description">Collaborating with you to develop a long-term IT strategy that aligns with your business goals, including technology roadmaps, budget planning, and competitive analysis.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-lightbulb detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">Digital Transformation Consulting</h4>
+                        </div>
+                        <p class="detailed-service-description">Guiding your business through the process of adopting digital technologies to fundamentally change how you operate and deliver value to your customers in the modern landscape.</p>
+                    </div>
+                    <div class="detailed-service-card">
+                        <div class="detailed-service-header">
+                            <i class="fas fa-project-diagram detailed-service-icon"></i>
+                            <h4 class="detailed-service-title">IT Project Management</h4>
+                        </div>
+                        <p class="detailed-service-description">Providing expert project management for complex IT initiatives, ensuring your projects are completed on time, within budget, and to the highest quality standards.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="process-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Process</span></h2>
+                <p class="section-description">A structured approach to delivering exceptional results</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>We analyze your requirements and business objectives to create a tailored solution.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Design</h3>
+                        <p>Our designers create wireframes and prototypes for your approval.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Development</h3>
+                        <p>We build your solution using agile methodologies and modern technologies.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Deployment</h3>
+                        <p>Your solution is thoroughly tested and deployed to production.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Support</h3>
+                        <p>We provide ongoing maintenance and support to ensure optimal performance.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+    </section>
+
+    <section class="case-studies-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Success <span class="text-gradient">Stories</span></h2>
+                <p class="section-description">See how we've helped businesses like yours achieve their goals</p>
+            </div>
+            
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Platform">
+                        <div class="case-study-overlay">
+                            <h3>E-commerce Platform</h3>
+                            <p>Fashion Bug Retail Companies LLC</p>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>E-commerce Platform for Fashion Bug</h3>
+                        <p>Developed a custom e-commerce solution that increased online sales by 40% with improved customer experience and advanced inventory management.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">40%</span>
+                                <span class="stat-label">Increase in Sales</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3s</span>
+                                <span class="stat-label">Load Time</span>
+                            </div>
+                        </div>
+                        <a href="#" class="secondary-button">
+                            Read Full Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="CRM Solution">
+                        <div class="case-study-overlay">
+                            <h3>Custom CRM</h3>
+                            <p>ImaliPay Ltd</p>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Custom CRM Solution for ImaliPay</h3>
+                        <p>Built a tailored CRM system that streamlined client management processes and increased operational efficiency by 30%.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">30%</span>
+                                <span class="stat-label">Efficiency Gain</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Data Accuracy</span>
+                            </div>
+                        </div>
+                        <a href="#" class="secondary-button">
+                            Read Full Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how we can help you achieve your technology goals.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="primary-button">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+1234567890" class="secondary-button">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-stack-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Technology Stack</span></h2>
+                <p class="section-description">We work with the best tools and technologies to deliver exceptional results</p>
+            </div>
+            
+            <div class="tech-stack-grid">
+                <div class="tech-stack-category">
+                    <h3>Frontend</h3>
+                    <div class="tech-stack-items">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            <span>React</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                            <span>Angular</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue">
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack-category">
+                    <h3>Backend</h3>
+                    <div class="tech-stack-items">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                            <span>Django</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET">
+                            <span>.NET Core</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack-category">
+                    <h3>Mobile</h3>
+                    <div class="tech-stack-items">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                            <span>React Native</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                            <span>Flutter</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                            <span>Swift</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                            <span>Kotlin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-stack-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="tech-stack-items">
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                            <span>Azure</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-stack-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p class="section-description">Find answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What industries do you specialize in?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have experience working with clients across various industries including healthcare, finance, e-commerce, education, and more. Our solutions are tailored to meet the specific needs of each industry.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you ensure project quality?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We follow industry best practices including code reviews, automated testing, and continuous integration. Our quality assurance process includes multiple testing phases to ensure the final product meets your expectations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is your development process?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We use an agile development methodology with iterative sprints. This allows for regular feedback and adjustments throughout the project lifecycle, ensuring the final product aligns perfectly with your vision.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you provide ongoing support?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer various support packages tailored to your needs. Our support services include maintenance, updates, performance optimization, and feature enhancements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you handle project pricing?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide transparent pricing based on project scope and requirements. We offer both fixed-price and time-and-materials engagement models depending on your project needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('services') }}#web-dev"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="{{ url_for('services') }}#mobile-dev"><i class="fas fa-chevron-right"></i> Mobile Development</a></li>
+                        <li><a href="{{ url_for('services') }}#cloud"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                        <li><a href="{{ url_for('services') }}#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for the latest tech insights and company updates.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
-    
-    <button id="back-to-top" title="Go to top">↑</button>
-    <script>
-      window.onscroll = function() {
-        const btn = document.getElementById('back-to-top');
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-          btn.style.display = 'block';
-        } else {
-          btn.style.display = 'none';
-        }
-      };
-      document.getElementById('back-to-top').addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
 
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

@@ -5,244 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalmnClassy Dev</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about') }}">About Us</a></li>
-                <li><a href="{{ url_for('services') }}">Our Services</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            </ul>
-        </nav>
+    <div class="page-container">
+        <!-- Main Content -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </nav>
 
-        <div class="header-content">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
-            <div class="header-text">
-                <h1>CalmnClassy Dev</h1>
-                <p>Your trusted partner in Web Solutions and IT Support</p>
+            <div class="header-content">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev Logo" id="company-logo">
+                <div class="header-text">
+                    <h1>CalmnClassy Dev</h1>
+                    <p>Building Technology with Calm Precision & Classy Impact</p>
+                </div>
             </div>
-        </div>
-    </header>
+            <button id="darkModeToggle">🌓</button>
+            <script>
+                const toggle = document.getElementById('darkModeToggle');
+                toggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+                });
 
-    <section id="intro">
-        <h2>Welcome to CalmnClassy Dev</h2>
-        <p>At CalmnClassy Dev, we blend creativity with technology to build exceptional web solutions. Whether you need a stunning website, robust IT support, or strategic consulting, we are here to help your business thrive in the digital age.</p>
-        <p>Our mission is to provide reliable, efficient, and elegant IT solutions that empower your organization to thrive in the digital age.</p>
-    </section>
-
-    <section id="about">
-         <div class="heading-icon"><i class="fas fa-info-circle"></i></div>
-        <h2>About Us</h2>
-        <p>CalmnClassy Dev is a leading IT support agency dedicated to delivering top-notch tech services with a touch of sophistication. We specialize in creating stunning websites and providing top-notch IT services to help businesses thrive in the digital age. Our team of experienced professionals is dedicated to delivering high-quality solutions tailored to meet your unique needs.</p>
-        <p>CnC Dev provides innovative and ingenious information technology services and solutions that range from IT strategy to design and development, to implementation and management, to troubleshooting and support. We focus on your desired business outcomes that meet business requirements and goals to accelerate success. </p>
-        <p>We are the most reliable ICT solutions partner in transforming your company in terms of profitability, quality of solutions or services, customer satisfaction and performance of processes and operations.</p>
-    </section>
-
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service">
-            <i class="fas fa-laptop-code"></i>
-            <p><strong>Custom Software Development & Design:</strong> We design and develop mobile, web, and desktop applications tailored to your specific business needs.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>ICT Services:</strong> Our team provides expertise in information systems to help you implement the right technology for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-search"></i>
-            <p><strong>SEO Optimization:</strong> Improve your website's visibility and ranking.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cogs"></i>
-            <p><strong>IT Consulting Solutions:</strong> Get expert advice on the best technology solutions for your business, including web services, SEO, and database design.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-lock"></i>
-            <p><strong>Cybersecurity & IT Security Solutions:</strong> Protect your business with our comprehensive security solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-cloud"></i>
-            <p><strong>Cloud Computing and Hosting:</strong> Seamless cloud integration and management services provide off-premise solutions for your business.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-server"></i>
-            <p><strong>SaaS (Software as a Service):</strong> Our SaaS solutions provide easy access to software and services from anywhere, anytime.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-database"></i>
-            <p><strong>Data Management:</strong> We provide servers and data management solutions to ensure your data is secure and accessible. Manage your customer interactions and relationships with our CRM solutions.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-network-wired"></i>
-            <p><strong>Computer Networking:</strong> Our network infrastructure services help optimize your network performance and increase efficiency.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-shopping-cart"></i>
-            <p><strong>Software & Hardware Procurement:</strong> Find the right technology solutions for your business with our software and hardware procurement services. Streamline your business processes with our productivity tools and solutions.</p>
-        </div>
-        </div>
-
-    </section>
-
-    <section id="whycnc">
-        <div class="heading-icon"><i class="fas fa-question-circle"></i></div>
-        <h2>Why Choose CnC Dev?</h2>
-        <div class="service">
-            <p><strong>Expertise:</strong> Our team consists of certified professionals with years of experience in the IT industry.</p>
-        </div>
-        <div class="service">
-            <p><strong>Reliability:</strong> We are dedicated to providing dependable and timely support, no matter the challenge.</p>
-        </div>
-        <div class="service">
-            <p><strong>Customer-Centric:</strong> Your satisfaction is our priority. We work closely with you to understand your unique needs and deliver personalized solutions.</p>
-        </div>
-        <div class="service">
-            <p><strong>Innovative Solutions:</strong> We stay ahead of the curve with the latest technology trends to bring you cutting-edge solutions.</p>
-        </div>
-        <p>A smart investment in information technology can result in reduced costs, improved profitability and overall business growth. Stay up to date with the latest in information systems and communication technology to make informed choices that align with your business goals.</p>
-    </section>
-
-    <section id="faq-carousel">
-        <h2><i class="fas fa-question-circle"></i>Frequently Asked Questions</h2>
-        <div class="faq-container">
-            <div class="faq-slide">
-                <h2>What services does CalmnClassy Dev offer?</h2>
-                <p>We offer a wide range of IT services including custom software development, IT consulting, cloud computing, cybersecurity, SEO optimization, and more. We tailor our solutions to meet your specific business needs.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>How can I contact CalmnClassy Dev for support?</h2>
-                <p>You can reach us via email at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 712 345 678. You can also fill out the contact form on our website, and our team will get back to you promptly.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>What industries do you serve?</h2>
-                <p>We serve a diverse range of industries including healthcare, finance, retail, education, and technology. Our team has the expertise to provide tailored solutions for various business sectors.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>How does CalmnClassy Dev ensure the security of my data?</h2>
-                <p>We implement robust cybersecurity measures to protect your data. This includes encryption, firewalls, regular security audits, and compliance with industry standards. Your data security is our top priority.</p>
-            </div>
-            <div class="faq-slide">
-                <h2>Can you help with website redesign and optimization?</h2>
-                <p>Absolutely! We specialize in website redesign and optimization to improve user experience, increase website speed, and enhance SEO performance. Our goal is to create a stunning and functional website that meets your business objectives.</p>
-            </div>
-        </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        <script>
-            let slideIndex = 0;
-            showSlide(slideIndex);
-
-            function moveSlide(n) {
-                showSlide(slideIndex += n);
-            }
-
-            function showSlide(n) {
-                let i;
-                const slides = document.getElementsByClassName("faq-slide");
-                if (n >= slides.length) { slideIndex = 0 }
-                if (n < 0) { slideIndex = slides.length - 1 }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
+                // Load saved preference
+                if (localStorage.getItem('darkMode') === 'true') {
+                    document.body.classList.add('dark-mode');
                 }
-                slides[slideIndex].style.display = "block";
+            </script>
+        </header>
+
+        <main>
+            <section id="intro">
+                <h2>Welcome to CalmnClassy Dev</h2>
+                <p>At CalmnClassy Dev, we blend creativity with technology to build exceptional web solutions. Whether you need a stunning website, robust IT support, or strategic consulting, we are here to help your business thrive in the digital age.</p>
+                <p>Our mission is to provide reliable, efficient, and elegant IT solutions that empower your organization to thrive in the digital age.</p>
+            </section>
+
+            <section id="about">
+                <div class="heading-icon"><i class="fas fa-info-circle"></i></div>
+                <h2>About Us</h2>
+                <p>CalmnClassy Dev is a leading IT support agency dedicated to delivering top-notch tech services with a touch of sophistication. We specialize in creating stunning websites and providing top-notch IT services to help businesses thrive in the digital age. Our team of experienced professionals is dedicated to delivering high-quality solutions tailored to meet your unique needs.</p>
+                <p>CnC Dev provides innovative and ingenious information technology services and solutions that range from IT strategy to design and development, to implementation and management, to troubleshooting and support. We focus on your desired business outcomes that meet business requirements and goals to accelerate success. </p>
+                <p>We are the most reliable ICT solutions partner in transforming your company in terms of profitability, quality of solutions or services, customer satisfaction and performance of processes and operations.</p>
+            </section>
+
+            <section id="services">
+                <h2>Our Services</h2>
+                <div class="services-container">
+                    <div class="service">
+                        <i class="fas fa-laptop-code"></i>
+                        <p><strong>Custom Software Development & Design:</strong> We design and develop mobile, web, and desktop applications tailored to your specific business needs.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-network-wired"></i>
+                        <p><strong>ICT Services:</strong> Our team provides expertise in information systems to help you implement the right technology for your business.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-search"></i>
+                        <p><strong>SEO Optimization:</strong> Improve your website's visibility and ranking.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-cogs"></i>
+                        <p><strong>IT Consulting Solutions:</strong> Get expert advice on the best technology solutions for your business, including web services, SEO, and database design.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-lock"></i>
+                        <p><strong>Cybersecurity & IT Security Solutions:</strong> Protect your business with our comprehensive security solutions.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-cloud"></i>
+                        <p><strong>Cloud Computing and Hosting:</strong> Seamless cloud integration and management services provide off-premise solutions for your business.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-server"></i>
+                        <p><strong>SaaS (Software as a Service):</strong> Our SaaS solutions provide easy access to software and services from anywhere, anytime.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-database"></i>
+                        <p><strong>Data Management:</strong> We provide servers and data management solutions to ensure your data is secure and accessible. Manage your customer interactions and relationships with our CRM solutions.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-network-wired"></i>
+                        <p><strong>Computer Networking:</strong> Our network infrastructure services help optimize your network performance and increase efficiency.</p>
+                    </div>
+                    <div class="service">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p><strong>Software & Hardware Procurement:</strong> Find the right technology solutions for your business with our software and hardware procurement services. Streamline your business processes with our productivity tools and solutions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="whycnc">
+                <div class="heading-icon"><i class="fas fa-question-circle"></i></div>
+                <h2>Why Choose CnC Dev?</h2>
+                <div class="service">
+                    <p><strong>Expertise:</strong> Our team consists of certified professionals with years of experience in the IT industry.</p>
+                </div>
+                <div class="service">
+                    <p><strong>Reliability:</strong> We are dedicated to providing dependable and timely support, no matter the challenge.</p>
+                </div>
+                <div class="service">
+                    <p><strong>Customer-Centric:</strong> Your satisfaction is our priority. We work closely with you to understand your unique needs and deliver personalized solutions.</p>
+                </div>
+                <div class="service">
+                    <p><strong>Innovative Solutions:</strong> We stay ahead of the curve with the latest technology trends to bring you cutting-edge solutions.</p>
+                </div>
+                <p>A smart investment in information technology can result in reduced costs, improved profitability and overall business growth. Stay up to date with the latest in information systems and communication technology to make informed choices that align with your business goals.</p>
+            </section>
+
+            <section id="faq-carousel">
+                <h2><i class="fas fa-question-circle"></i>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-slide">
+                        <h2>What services does CalmnClassy Dev offer?</h2>
+                        <p>We offer a wide range of IT services including custom software development, IT consulting, cloud computing, cybersecurity, SEO optimization, and more. We tailor our solutions to meet your specific business needs.</p>
+                    </div>
+                    <div class="faq-slide">
+                        <h2>How can I contact CalmnClassy Dev for support?</h2>
+                        <p>You can reach us via email at <a href="mailto:info@calmnclassy.dev">info@calmnclassy.dev</a> or call us at +254 712 345 678. You can also fill out the contact form on our website, and our team will get back to you promptly.</p>
+                    </div>
+                    <div class="faq-slide">
+                        <h2>What industries do you serve?</h2>
+                        <p>We serve a diverse range of industries including healthcare, finance, retail, education, and technology. Our team has the expertise to provide tailored solutions for various business sectors.</p>
+                    </div>
+                    <div class="faq-slide">
+                        <h2>How does CalmnClassy Dev ensure the security of my data?</h2>
+                        <p>We implement robust cybersecurity measures to protect your data. This includes encryption, firewalls, regular security audits, and compliance with industry standards. Your data security is our top priority.</p>
+                    </div>
+                    <div class="faq-slide">
+                        <h2>Can you help with website redesign and optimization?</h2>
+                        <p>Absolutely! We specialize in website redesign and optimization to improve user experience, increase website speed, and enhance SEO performance. Our goal is to create a stunning and functional website that meets your business objectives.</p>
+                    </div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                <script>
+                    let slideIndex = 0;
+                    showSlide(slideIndex);
+
+                    function moveSlide(n) {
+                        showSlide(slideIndex += n);
+                    }
+
+                    function showSlide(n) {
+                        let i;
+                        const slides = document.getElementsByClassName("faq-slide");
+                        if (n >= slides.length) { slideIndex = 0 }
+                        if (n < 0) { slideIndex = slides.length - 1 }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        slides[slideIndex].style.display = "block";
+                    }
+                </script>
+            </section>
+
+            <section id="testimonials">
+                <div class="heading-icon"><i class="fas fa-quote-left"></i></div>
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial">
+                    <p>""CalmnClassy Dev transformed our website and provided exceptional IT support. Our business has never been more efficient! Their team is professional, responsive, and highly skilled. I highly recommend them to any business in need of top-notch IT services."</p>
+                    <p><strong>John Ndung'u, Operations Manager- Paramount Bank Limited</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"The team at CalmnClassy Dev is knowledgeable, responsive, and always ready to help. They developed a custom software solution for us that has significantly improved our operations. Their expertise and commitment to excellence are truly commendable."</p>
+                    <p><strong>Anna Smith, Technical Director Susten Energy</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with CalmnClassy Dev was a game-changer for our digital marketing strategy. They optimized our website for SEO and implemented effective strategies that boosted our online visibility. We saw a significant increase in web traffic and conversions. Thank you, CalmnClassy Dev!"</p>
+                    <p><strong>Jane Adasa, Executive Assistant at Superior Hotels kenya</strong></p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="heading-icon"><i class="fas fa-envelope"></i></div>
+                <h2>Let's Connect</h2>
+                <p>Ready to elevate your IT experience? Contact us today to learn how CalmnClassy Dev can help your business succeed. Together, we’ll navigate the complexities of technology with confidence and style.</p>
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+                <p>Reach out to us at <a href="mailto:calmnclassydev@gmail.com">info@calmnclassy.dev</a> or call us at +254 745 087 451</p>
+            </section>
+
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const sendButton = event.target.querySelector('button[type="submit"]');
+                    sendButton.textContent = 'Sending...';
+                    sendButton.style.backgroundColor = '#045F32';
+
+                    fetch('{{ url_for("send_message") }}', {
+                        method: 'POST',
+                        body: new FormData(event.target)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            sendButton.textContent = '✓ Sent!';
+                            event.target.reset(); // Clear form
+                        } else {
+                            sendButton.textContent = 'Failed! Try Again';
+                            sendButton.style.backgroundColor = '#FF0000';
+                        }
+                        setTimeout(() => {
+                            sendButton.textContent = 'Send';
+                            sendButton.style.backgroundColor = '#4CAF50';
+                        }, 3000);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        sendButton.textContent = 'Error!';
+                        sendButton.style.backgroundColor = '#FF0000';
+                    });
+                });
+            </script>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Favicon and Navigation Links -->
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="Favicon" class="footer-favicon">
+                <div class="footer-links-container">
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}">Quick Links</a></li>
+                        <li><a href="{{ url_for('about') }}">Explore CnC</a></li>
+                    </ul>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('services') }}">What we do</a></li>
+                        <li><a href="{{ url_for('contact') }}">Talk to Us</a></li>
+                        <li><a href="{{ url_for('blog') }}">Blogs</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Center Section: Paragraph Text -->
+            <div class="footer-center">
+                <p>Crafting digital excellence with a touch of class.</p>
+            </div>
+
+            <!-- Right Section: Social Icons -->
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/calmnclassydev" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Go to top">↑</button>
+    <script>
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
             }
-        </script>
-    </section>
-
-    <section id="testimonials">
-        <div class="heading-icon"><i class="fas fa-quote-left"></i></div>
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial">
-            <p>""CalmnClassy Dev transformed our website and provided exceptional IT support. Our business has never been more efficient! Their team is professional, responsive, and highly skilled. I highly recommend them to any business in need of top-notch IT services."</p>
-            <p><strong>John Ndung'u, Operations Manager- Paramount Bank Limited</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"The team at CalmnClassy Dev is knowledgeable, responsive, and always ready to help. They developed a custom software solution for us that has significantly improved our operations. Their expertise and commitment to excellence are truly commendable."</p>
-            <p><strong>Anna Smith, Technical Director Susten Energy</strong></p>
-        </div>
-        <div class="testimonial">
-            <p>"Working with CalmnClassy Dev was a game-changer for our digital marketing strategy. They optimized our website for SEO and implemented effective strategies that boosted our online visibility. We saw a significant increase in web traffic and conversions. Thank you, CalmnClassy Dev!"</p>
-            <p><strong>Jane Adasa, Executive Assistant at Superior Hotels kenya</strong></p>
-        </div>
-
-    </section>
-
-    <section id="contact">
-       <div class="heading-icon"><i class="fas fa-envelope"></i></div>
-        <h2>Let's Connect</h2>
-        <p>Ready to elevate your IT experience? Contact us today to learn how CalmnClassy Dev can help your business succeed. Together, we’ll navigate the complexities of technology with confidence and style.</p>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
-       <p>Reach out to us at <a href="mailto:calmnclassydev@gmail.com">info@calmnclassy.dev</a> or call us at +254 745 087 451</p>
-    </section>
-
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-    const sendButton = event.target.querySelector('button[type="submit"]');
-
-    // Change button text and color immediately when pressed
-    sendButton.textContent = 'Sending...';
-    sendButton.style.backgroundColor = '#045F32'; // Dark green
-
-    fetch('{{ url_for("send_message") }}', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Change button text to 'Sent'
-            sendButton.textContent = 'Sent';
-
-            // Optionally disable the button to prevent multiple submissions
-            sendButton.disabled = true;
-
-            // Reset button text and color after a delay (optional)
-            setTimeout(() => {
-                sendButton.textContent = 'Send';
-                sendButton.style.backgroundColor = '#4CAF50'; // Original green
-                sendButton.disabled = false;
-            }, 3000); // Reset after 3 seconds
-        } else {
-            console.error('Error sending message');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        // Reset button if there is an error
-        sendButton.textContent = 'Send';
-        sendButton.style.backgroundColor = '#4CAF50'; // Original green
-    });
-});
-</script>
-
-   <footer>
-       <div class="social-icons">
-           <a href="https://www.facebook.com/CalmnClassyDev" target="_blank"><i class="fab fa-facebook-f"></i></a>
-           <a href="https://www.twitter.com/CalmnClassyDev" target="_blank"><i class="fab fa-twitter"></i></a>
-           <a href="https://www.linkedin.com/company/CalmnClassyDev" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-           <a href="https://www.instagram.com/calmnclassydev/?utm_source=ig_web_button_share_sheet" target="_blank"><i class="fab fa-instagram"></i></a>
-       </div>
-       <p>&copy; 2020 CalmnClassy Dev. All rights reserved.</p>
-   </footer>
-
+        };
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

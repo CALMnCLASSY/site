@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Solutions - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
+                <span class="company-name">CalmnClassy Dev</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="{{ url_for('home') }}" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('services') }}" class="nav-link">
+                            <i class="fas fa-cubes"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('solutions') }}" class="nav-link active">
+                            <i class="fas fa-lightbulb"></i> Solutions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="solutions-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformative <span class="text-gradient">Technology Solutions</span></h1>
+                <p class="hero-subtitle">Tailored IT solutions that drive business growth and digital transformation</p>
+                <div class="hero-buttons">
+                    <a href="#industry-solutions" class="primary-button">
+                        Explore Solutions <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="secondary-button">
+                        <i class="fas fa-phone-alt"></i> Get a Consultation
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Technology Solutions" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Challenges Section -->
+    <section class="challenges-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Solving Modern <span class="text-gradient">Business Challenges</span></h2>
+                <p class="section-description">We help businesses overcome these common technology obstacles</p>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Transformation</h3>
+                    <p>Struggling to modernize legacy systems and processes? Our phased approach makes digital transformation achievable.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Risks</h3>
+                    <p>Concerned about cybersecurity threats? We implement comprehensive protection strategies tailored to your risk profile.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Migration</h3>
+                    <p>Overwhelmed by moving to the cloud? Our experts handle seamless migration with minimal downtime.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Workforce</h3>
+                    <p>Need to support remote teams? We build secure, scalable solutions for distributed work environments.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Management</h3>
+                    <p>Drowning in unstructured data? We create systems to organize, analyze, and leverage your business data.</p>
+                </div>
+                
+                <div class="challenge-card">
+                    <div class="challenge-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>System Performance</h3>
+                    <p>Suffering from slow applications? We optimize infrastructure and code for maximum efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Solutions Section -->
+    <section id="industry-solutions" class="industry-solutions-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Industry-Specific <span class="text-gradient">Solutions</span></h2>
+                <p class="section-description">Tailored technology solutions for your business sector</p>
+            </div>
+            
+            <div class="industry-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="finance">Finance</button>
+                    <button class="tab-button" data-tab="healthcare">Healthcare</button>
+                    <button class="tab-button" data-tab="retail">Retail</button>
+                    <button class="tab-button" data-tab="education">Education</button>
+                    <button class="tab-button" data-tab="manufacturing">Manufacturing</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Finance Tab -->
+                    <div id="finance" class="tab-pane active">
+                        <div class="tab-content-left">
+                            <h3>Financial Technology Solutions</h3>
+                            <p>Secure, compliant technology solutions for banks, fintech, and financial services:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Secure online banking platforms</li>
+                                <li><i class="fas fa-check-circle"></i> Fraud detection systems</li>
+                                <li><i class="fas fa-check-circle"></i> Payment processing integrations</li>
+                                <li><i class="fas fa-check-circle"></i> Regulatory compliance solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Data analytics for risk assessment</li>
+                            </ul>
+                            <a href="{{ url_for('contact') }}" class="primary-button">
+                                Discuss Financial Solutions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content-right">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Financial Solutions">
+                        </div>
+                    </div>
+                    
+                    <!-- Healthcare Tab -->
+                    <div id="healthcare" class="tab-pane">
+                        <div class="tab-content-left">
+                            <h3>Healthcare Technology Solutions</h3>
+                            <p>HIPAA-compliant systems that improve patient care and operational efficiency:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Electronic Health Records (EHR) systems</li>
+                                <li><i class="fas fa-check-circle"></i> Telemedicine platforms</li>
+                                <li><i class="fas fa-check-circle"></i> Patient portal development</li>
+                                <li><i class="fas fa-check-circle"></i> Medical billing software</li>
+                                <li><i class="fas fa-check-circle"></i> Healthcare data security</li>
+                            </ul>
+                            <a href="{{ url_for('contact') }}" class="primary-button">
+                                Discuss Healthcare Solutions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content-right">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Healthcare Solutions">
+                        </div>
+                    </div>
+                    
+                    <!-- Retail Tab -->
+                    <div id="retail" class="tab-pane">
+                        <div class="tab-content-left">
+                            <h3>Retail Technology Solutions</h3>
+                            <p>Omnichannel solutions that enhance customer experience and boost sales:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> E-commerce platforms</li>
+                                <li><i class="fas fa-check-circle"></i> Point-of-Sale (POS) systems</li>
+                                <li><i class="fas fa-check-circle"></i> Inventory management</li>
+                                <li><i class="fas fa-check-circle"></i> Customer loyalty programs</li>
+                                <li><i class="fas fa-check-circle"></i> AR/VR shopping experiences</li>
+                            </ul>
+                            <a href="{{ url_for('contact') }}" class="primary-button">
+                                Discuss Retail Solutions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content-right">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Retail Solutions">
+                        </div>
+                    </div>
+                    
+                    <!-- Education Tab -->
+                    <div id="education" class="tab-pane">
+                        <div class="tab-content-left">
+                            <h3>Education Technology Solutions</h3>
+                            <p>Innovative learning platforms and institutional management systems:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Learning Management Systems (LMS)</li>
+                                <li><i class="fas fa-check-circle"></i> Student information systems</li>
+                                <li><i class="fas fa-check-circle"></i> Virtual classroom solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Educational mobile apps</li>
+                                <li><i class="fas fa-check-circle"></i> Campus security solutions</li>
+                            </ul>
+                            <a href="{{ url_for('contact') }}" class="primary-button">
+                                Discuss Education Solutions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content-right">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Education Solutions">
+                        </div>
+                    </div>
+                    
+                    <!-- Manufacturing Tab -->
+                    <div id="manufacturing" class="tab-pane">
+                        <div class="tab-content-left">
+                            <h3>Manufacturing Technology Solutions</h3>
+                            <p>Industry 4.0 solutions that optimize production and supply chain:</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> IoT-enabled equipment monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> Predictive maintenance systems</li>
+                                <li><i class="fas fa-check-circle"></i> Supply chain management</li>
+                                <li><i class="fas fa-check-circle"></i> Quality control automation</li>
+                                <li><i class="fas fa-check-circle"></i> ERP system integration</li>
+                            </ul>
+                            <a href="{{ url_for('contact') }}" class="primary-button">
+                                Discuss Manufacturing Solutions <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="tab-content-right">
+                            <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Manufacturing Solutions">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Benefits Section -->
+    <section class="benefits-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Business <span class="text-gradient">Benefits</span></h2>
+                <p class="section-description">How our technology solutions create value for your organization</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Increased Efficiency</h3>
+                    <p>Automate repetitive tasks and streamline workflows to boost productivity by up to 40%.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Turn raw data into actionable insights with powerful analytics dashboards.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Enhanced Security</h3>
+                    <p>Protect sensitive information with enterprise-grade security measures.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                    <h3>Scalable Infrastructure</h3>
+                    <p>Grow seamlessly with cloud-based solutions that adapt to your needs.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Cost Reduction</h3>
+                    <p>Optimize IT spending and reduce operational costs by up to 30%.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Improved Customer Experience</h3>
+                    <p>Deliver seamless digital experiences that keep customers engaged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section bg-light">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Success <span class="text-gradient">Stories</span></h2>
+                <p class="section-description">Real-world examples of how we've helped businesses like yours</p>
+            </div>
+            
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Banking Solution">
+                    </div>
+                    <div class="case-study-content">
+                        <div class="case-study-badge">Finance</div>
+                        <h3>Digital Banking Platform</h3>
+                        <p>Developed a secure online banking system for a regional bank, resulting in 35% more digital transactions.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">35%</span>
+                                <span class="stat-label">More Transactions</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">60%</span>
+                                <span class="stat-label">Faster Processing</span>
+                            </div>
+                        </div>
+                        <a href="#" class="secondary-button">
+                            Read Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Healthcare Solution">
+                    </div>
+                    <div class="case-study-content">
+                        <div class="case-study-badge">Healthcare</div>
+                        <h3>Hospital Management System</h3>
+                        <p>Implemented a comprehensive EHR system that reduced administrative workload by 45%.</p>
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">45%</span>
+                                <span class="stat-label">Less Admin Work</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">HIPAA Compliant</span>
+                            </div>
+                        </div>
+                        <a href="#" class="secondary-button">
+                            Read Case Study <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="{{ url_for('case_studies') }}" class="primary-button">
+                    View All Case Studies <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Partners Section -->
+    <section class="partners-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Technology Partners</span></h2>
+                <p class="section-description">We work with leading technology providers to deliver best-in-class solutions</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Cloud">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how our technology solutions can drive your business forward.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="primary-button">
+                        Get Started <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+254745087451" class="secondary-button">
+                        <i class="fas fa-phone-alt"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('solutions') }}"><i class="fas fa-chevron-right"></i> Solutions</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Solutions -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('solutions') }}#finance"><i class="fas fa-chevron-right"></i> Financial</a></li>
+                        <li><a href="{{ url_for('solutions') }}#healthcare"><i class="fas fa-chevron-right"></i> Healthcare</a></li>
+                        <li><a href="{{ url_for('solutions') }}#retail"><i class="fas fa-chevron-right"></i> Retail</a></li>
+                        <li><a href="{{ url_for('solutions') }}#education"><i class="fas fa-chevron-right"></i> Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for the latest tech insights and company updates.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="trust-badges">
+                        <img src="{{ url_for('static', filename='iso-badge.png') }}" alt="ISO Certified">
+                        <img src="{{ url_for('static', filename='gdpr-badge.png') }}" alt="GDPR Compliant">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 CalmnClassy Dev. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and panes
+                document.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Case study card hover effects
+        document.querySelectorAll('.case-study-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('.case-study-image img');
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('.case-study-image img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
