@@ -342,15 +342,21 @@ function loadCaseStudy(url) {
         });
 }
 
-document.querySelector('.close-modal').addEventListener('click', () => {
-    document.getElementById('caseModal').style.display = 'none';
-    document.body.style.overflow = '';
-});
+// Modal functionality - only run if modal elements exist
+const closeModalBtn = document.querySelector('.close-modal');
+const caseModal = document.getElementById('caseModal');
 
-// Close modal when clicking outside content
-document.getElementById('caseModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.style.display = 'none';
+if (closeModalBtn && caseModal) {
+    closeModalBtn.addEventListener('click', () => {
+        caseModal.style.display = 'none';
         document.body.style.overflow = '';
-    }
-});
+    });
+
+    // Close modal when clicking outside content
+    caseModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+}
