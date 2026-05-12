@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Security Overhaul - CalmnClassy Dev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
+    
+    <style>
+        /* Dynamic gradient animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo as Home Link -->
+            <a href="{{ url_for('home') }}" class="logo-home">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CALMnCLASSY" class="header-logo">
+                <span class="company-name">CALMnCLASSY</span>
+            </a>
+            
+            <!-- Main Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                    <a href="{{ url_for('services') }}" class="nav-link">
+                        <i class="fas fa-cubes"></i> Services
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url_for('solutions') }}" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Solutions
+                    </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-building"></i> Company <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('contact') }}" class="nav-link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="{{ url_for('contact') }}" class="cta-button">
+                    Get Started <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="case-study-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">E-commerce <span class="text-gradient">Security Overhaul</span></h1>
+                <p class="hero-subtitle">Comprehensive security implementation for growing online retail platform</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('case_studies') }}" class="secondary-button">
+                        <i class="fas fa-arrow-left"></i> Back to Case Studies
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="primary-button">
+                        <i class="fas fa-phone-alt"></i> Discuss Your Project
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/retail-case.jpg') }}" alt="E-commerce Security" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Overview -->
+    <section class="case-overview">
+        <div class="section-container">
+            <div class="case-header">
+                <h2 class="case-title">E-commerce Security Overhaul</h2>
+                <div class="case-meta">
+                    <span class="case-industry">Retail</span>
+                    <span class="case-date">November 2022</span>
+                    <span class="case-duration">3 months</span>
+                </div>
+            </div>
+            
+            <div class="case-summary">
+                <p>Implemented comprehensive security measures for a growing e-commerce platform, achieving full PCI DSS compliance and protecting customer data while maintaining system performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="challenge-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Challenge</h2>
+            </div>
+            
+            <div class="challenge-content">
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Security Vulnerabilities</h3>
+                    <p>The e-commerce platform had multiple security vulnerabilities including outdated encryption, weak access controls, and insufficient monitoring systems.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>PCI DSS Non-compliance</h3>
+                    <p>Failed to meet Payment Card Industry Data Security Standards, risking customer data and facing potential regulatory penalties.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Data Protection Concerns</h3>
+                    <p>Inadequate data protection measures exposed customer information to potential breaches and privacy violations.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance vs Security Balance</h3>
+                    <p>Existing security measures were causing significant performance degradation, affecting user experience and conversion rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Our Solution</h2>
+            </div>
+            
+            <div class="solution-content">
+                <div class="solution-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>End-to-End Encryption</h3>
+                        <p>Implemented AES-256 encryption for all data in transit and at rest, ensuring comprehensive data protection.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Multi-Factor Authentication</h3>
+                        <p>Added 2FA and biometric authentication for admin access, significantly reducing unauthorized access risks.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Advanced Monitoring System</h3>
+                        <p>Deployed real-time security monitoring with automated threat detection and instant alert systems.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Secure Infrastructure</h3>
+                        <p>Hardened server configurations and implemented network segmentation for improved security isolation.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3>PCI DSS Compliance</h3>
+                        <p>Achieved full PCI DSS Level 1 compliance through comprehensive security framework implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Outstanding Results</h2>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">
+                        <div class="result-value">100%</div>
+                        <div class="result-label">Security Compliance</div>
+                    </div>
+                    <div class="result-description">
+                        <h4>PCI DSS Certification</h4>
+                        <p>Achieved full compliance with industry security standards, eliminating regulatory risks.</p>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-metric">
+                        <div class="result-value">0</div>
+                        <div class="result-label">Data Breaches Since</div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Zero Security Incidents</h4>
+                        <p>No security breaches since implementation, demonstrating robust protection measures.</p>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-metric">
+                        <div class="result-value">15%</div>
+                        <div class="result-label">Performance Improvement</div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Enhanced User Experience</h4>
+                        <p>Optimized security measures improved overall system performance and user satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-metric">
+                        <div class="result-value">40%</div>
+                        <div class="result-label">Reduced Risk</div>
+                    </div>
+                    <div class="result-description">
+                        <h4>Risk Mitigation</h4>
+                        <p>Significantly reduced security risks through comprehensive protection framework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section class="tech-stack-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Technology Stack</h2>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                    <h3>Laravel</h3>
+                    <p>PHP framework for secure backend development and API management</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React.js</h3>
+                    <p>Frontend framework for secure and responsive user interface development</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>PostgreSQL</h3>
+                    <p>Secure database with advanced encryption and access controls</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS Security Services</h3>
+                    <p>Cloud security tools including GuardDuty, Inspector, and WAF</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>SSL/TLS Certificates</h3>
+                    <p>Advanced encryption certificates for secure data transmission</p>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Security Monitoring Tools</h3>
+                    <p>Real-time threat detection and security analytics platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Client Testimonial</h2>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "CalmnClassy Dev completely transformed our security posture. Not only are we fully PCI DSS compliant, but our customers trust us more than ever with their data."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <span>Chief Technology Officer, Global Retail Group</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Secure Your E-commerce Platform?</h2>
+                <p>Let's discuss how we can help your retail business achieve comprehensive security compliance and customer trust.</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('contact') }}" class="primary-button">
+                        <i class="fas fa-phone-alt"></i> Schedule a Consultation
+                    </a>
+                    <a href="{{ url_for('case_studies') }}" class="secondary-button">
+                        <i class="fas fa-arrow-left"></i> View More Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Footer Main Content -->
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <a href="{{ url_for('home') }}" class="footer-logo">
+                        <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="CalmnClassy Dev">
+                        <span>CalmnClassy Dev</span>
+                    </a>
+                    <p class="footer-about">
+                        Transforming businesses through innovative IT solutions and strategic technology consulting.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="{{ url_for('services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="{{ url_for('case_studies') }}"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                        <li><a href="{{ url_for('contact') }}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('services') }}#web-dev"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="{{ url_for('services') }}#cloud"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                        <li><a href="{{ url_for('services') }}#cybersecurity"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                        <li><a href="{{ url_for('services') }}#consulting"><i class="fas fa-chevron-right"></i> IT Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('blog') }}"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="{{ url_for('whitepapers') }}"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                        <li><a href="{{ url_for('webinars') }}"><i class="fas fa-chevron-right"></i> Webinars</a></li>
+                        <li><a href="{{ url_for('documentation') }}"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> CalmnClassy Dev. All rights reserved.
+                    <script>
+                        document.getElementById('year').textContent = new Date().getFullYear();
+                    </script>
+                </div>
+                <div class="legal-links">
+                    <a href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('terms') }}">Terms of Service</a>
+                    <a href="{{ url_for('cookies') }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Back to top button
+        window.onscroll = function() {
+            const btn = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -15,17 +15,22 @@
         <div class="header-container">
             <!-- Logo as Home Link -->
             <a href="{{ url_for('home') }}" class="logo-home">
-                <img src="{{ url_for('static', filename='logo.png') }}" alt="CalmnClassy Dev" class="header-logo">
-                <span class="company-name">CalmnClassy Dev</span>
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="CALMnCLASSY" class="header-logo">
+                <span class="company-name">CALMnCLASSY</span>
             </a>
             
             <!-- Main Navigation -->
             <nav class="main-nav">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="{{ url_for('home') }}" class="nav-link">
-                            <i class="fas fa-home"></i> Home
-                        </a>
+                    <a href="{{ url_for('services') }}" class="nav-link">
+                        <i class="fas fa-cubes"></i> Services
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url_for('solutions') }}" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Solutions
+                    </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link">
@@ -34,13 +39,12 @@
                         <div class="dropdown-content">
                             <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About Us</a>
                             <a href="{{ url_for('team') }}"><i class="fas fa-users"></i> Our Team</a>
-                            <a href="{{ url_for('careers') }}" class="active"><i class="fas fa-briefcase"></i> Careers</a>
+                            <a href="{{ url_for('blog') }}"><i class="fas fa-blog"></i> Blog</a>
+                            <a href="{{ url_for('careers') }}"><i class="fas fa-briefcase"></i> Careers</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('services') }}" class="nav-link">
-                            <i class="fas fa-cubes"></i> Services
-                        </a>
+
                     </li>
                     <li class="nav-item">
                         <a href="{{ url_for('contact') }}" class="nav-link">
@@ -346,7 +350,6 @@
                     <div class="testimonial-content">
                         <p>"I've grown more in my two years at CalmnClassy Dev than in my previous five years combined. The learning opportunities and challenging projects keep me engaged every day."</p>
                         <div class="testimonial-author">
-                            <img src="{{ url_for('static', filename='team/grace-mwangi.jpg') }}" alt="Grace Mwangi">
                             <div>
                                 <strong>Grace Mwangi</strong>
                                 <span>Senior Developer, 2 years at CalmnClassy</span>
@@ -359,7 +362,6 @@
                     <div class="testimonial-content">
                         <p>"The culture here is truly collaborative. Leadership values everyone's input, and I feel my contributions make a real difference to both our team and our clients."</p>
                         <div class="testimonial-author">
-                            <img src="{{ url_for('static', filename='team/peter-kamau.jpg') }}" alt="Peter Kamau">
                             <div>
                                 <strong>Peter Kamau</strong>
                                 <span>Mobile Developer, 1 year at CalmnClassy</span>
@@ -379,7 +381,7 @@
                 <!-- Company Info -->
                 <div class="footer-col company-info">
                     <a href="{{ url_for('home') }}" class="footer-logo">
-                        <img src="{{ url_for('static', filename='logo-white.png') }}" alt="CalmnClassy Dev">
+                        <img src="{{ url_for('static', filename='favicon.jpg') }}" alt="CalmnClassy Dev">
                         <span>CalmnClassy Dev</span>
                     </a>
                     <p class="footer-about">

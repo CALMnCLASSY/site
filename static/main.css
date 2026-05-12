@@ -3741,3 +3741,436 @@ textarea.form-control {
         font-size: 1.5rem;
     }
 }
+
+/* ===== CASE STUDY PAGES ===== */
+
+/* Case Study Hero Section */
+.case-study-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-hero .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.case-study-hero .hero-content {
+    text-align: left;
+}
+
+.case-study-hero .hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.case-study-hero .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.case-study-hero .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.case-study-hero .hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Case Study Overview Section */
+.case-overview {
+    padding: 4rem 0;
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.case-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.case-meta {
+    display: flex;
+    gap: 2rem;
+}
+
+.case-industry {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.case-date, .case-duration {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.case-summary {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    max-width: 800px;
+}
+
+/* Challenge Section */
+.challenge-section {
+    padding: 4rem 0;
+}
+
+.challenge-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.challenge-item {
+    background: rgba(20, 20, 20, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s ease;
+}
+
+.challenge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(16,185,129,0.15);
+}
+
+.challenge-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.challenge-icon i {
+    font-size: 2rem;
+    color: #ef4444;
+}
+
+.challenge-item h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.challenge-item p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+/* Solution Section */
+.solution-section {
+    padding: 4rem 0;
+    background: rgba(5, 5, 5, 0.9);
+}
+
+.solution-content {
+    margin-top: 3rem;
+}
+
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background: rgba(20, 20, 20, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(16,185,129,0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: #10b981;
+}
+
+.feature-item h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-item p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+/* Results Section */
+.results-section {
+    padding: 4rem 0;
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.result-card {
+    background: rgba(20, 20, 20, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(16,185,129,0.15);
+}
+
+.result-metric {
+    margin-bottom: 1.5rem;
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+}
+
+.result-description h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.result-description p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+/* Technology Stack Section */
+.tech-stack-section {
+    padding: 4rem 0;
+    background: rgba(20, 20, 20, 0.6);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-item {
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(16,185,129,0.15);
+}
+
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.tech-icon i {
+    font-size: 1.5rem;
+    color: #10b981;
+}
+
+.tech-item h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tech-item p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    padding: 4rem 0;
+}
+
+.testimonial-card {
+    background: rgba(20, 20, 20, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.testimonial-content {
+    text-align: center;
+}
+
+.rating {
+    margin-bottom: 1.5rem;
+}
+
+.rating i {
+    color: #f59e0b;
+    font-size: 1.2rem;
+    margin: 0 0.25rem;
+}
+
+.testimonial-content blockquote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    text-align: right;
+    color: rgba(255,255,255,0.7);
+}
+
+.testimonial-author strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-author span {
+    font-size: 0.9rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a2e1a 100%);
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design for Case Studies */
+@media (max-width: 768px) {
+    .case-study-hero .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .case-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .challenge-content,
+    .solution-features,
+    .results-grid,
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .case-summary {
+        font-size: 1rem;
+    }
+    
+    .testimonial-card {
+        margin: 0 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

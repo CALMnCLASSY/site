@@ -108,6 +108,18 @@ def blog():
 def case_studies():
     return render_template('case_studies.html')
 
+@app.route('/case-study/finance-banking')
+def case_study_finance_banking():
+    return render_template('case-study-finance-banking.html')
+
+@app.route('/case-study/healthcare-cloud')
+def case_study_healthcare_cloud():
+    return render_template('case-study-healthcare-cloud.html')
+
+@app.route('/case-study/retail-security')
+def case_study_retail_security():
+    return render_template('case-study-retail-security.html')
+
 @app.route('/whitepapers')
 def whitepapers():
     return render_template('whitepapers.html')
